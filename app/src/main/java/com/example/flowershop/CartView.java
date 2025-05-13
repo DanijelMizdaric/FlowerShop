@@ -70,15 +70,10 @@ public class CartView extends AppCompatActivity {
 
         checkoutButton.setOnClickListener(v -> {
             List<FlowerRoom> cartItems = cartManager.getCartFlowers().getValue();
-            if(cartItems!=null && !cartItems.isEmpty()) {
-                for (FlowerRoom flower : cartItems) {
-                    cartManager.checkoutFlower(flower);
-                    cartManager.removeFromCart(flower);
-                }
-                Toast.makeText(this, "Pur" +
-                        "chase completed!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(CartView.this, HomeScreen.class);
-                startActivity(intent);
+            if (cartItems != null && !cartItems.isEmpty()) {
+                cartManager.checkoutAllFlowers(cartItems);  // New method
+                Toast.makeText(this, "Purchase completed!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(CartView.this, HomeScreen.class));
                 finish();
             } else {
                 Toast.makeText(this, "Cart is empty!", Toast.LENGTH_SHORT).show();

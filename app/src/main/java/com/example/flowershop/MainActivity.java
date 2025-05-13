@@ -42,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         registerButton.setOnClickListener(v -> {
-            // You can later link this to a registration activity
-            Toast.makeText(MainActivity.this, "Register button clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent (MainActivity.this, Register.class);
+            startActivity(intent);
+            finish();
         });
     }
 }

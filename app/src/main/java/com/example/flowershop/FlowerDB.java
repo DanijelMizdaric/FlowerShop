@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-@Database(entities = {FlowerRoom.class, OrderRoom.class}, version = 2)
+@Database(entities = {FlowerRoom.class, OrderRoom.class}, version = 3)
 public abstract class FlowerDB extends RoomDatabase{
 
     private static FlowerDB instance;

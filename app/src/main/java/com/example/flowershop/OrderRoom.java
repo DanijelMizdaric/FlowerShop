@@ -8,11 +8,12 @@ public class OrderRoom {
 
     @PrimaryKey(autoGenerate = true)
     public int id;
-
+    public int orderID;
     public String name;
     public int quantity;
 
-    public OrderRoom(String name, int quantity) {
+    public OrderRoom(int orderID, String name, int quantity) {
+        this.orderID=orderID;
         this.name = name;
         this.quantity = quantity;
     }
