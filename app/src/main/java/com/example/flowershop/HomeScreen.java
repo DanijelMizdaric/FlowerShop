@@ -22,7 +22,7 @@ public class HomeScreen extends AppCompatActivity {
 
     Button addBtn1, addBtn2, addBtn3, addBtn4, addBtn5, addBtn6;
     Button removeBtn1, removeBtn2, removeBtn3, removeBtn4, removeBtn5, removeBtn6;
-    Button goCart;
+    Button goCart, goOrders;
     EditText searchBar;
     ScrollView scrollview;
     int a=1;
@@ -59,6 +59,7 @@ public class HomeScreen extends AppCompatActivity {
         searchBar = findViewById(R.id.searchbarID);
         scrollview = findViewById(R.id.scrollView);
         goCart = findViewById(R.id.gotoCartID);
+        goOrders = findViewById(R.id.checkOrderID);
 
         Map<String, Integer> flowerMap = new HashMap<>();
         flowerMap.put("rose", R.id.textView3);
@@ -181,6 +182,12 @@ public class HomeScreen extends AppCompatActivity {
         // Navigate to CartView activity when goCart button is clicked
         goCart.setOnClickListener(v -> {
             Intent intent = new Intent(HomeScreen.this, CartView.class);
+            intent.putExtra("username", Username);
+            startActivity(intent);
+            finish();
+        });
+        goOrders.setOnClickListener(v->{
+            Intent intent = new Intent(HomeScreen.this, OrdersView.class);
             intent.putExtra("username", Username);
             startActivity(intent);
             finish();

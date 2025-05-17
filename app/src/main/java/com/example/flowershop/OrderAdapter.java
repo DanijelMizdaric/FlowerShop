@@ -12,36 +12,43 @@ import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
 
-    List<OrderRoom> orderList; // Use OrderRoom instead of Order
+    private List<OrderRoom> orders;
 
     public OrderAdapter(List<OrderRoom> orders) {
-        this.orderList = orders;
+        this.orders = orders;
     }
 
-    @NonNull
     @Override
-    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public OrderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.order_item, parent, false);
         return new OrderViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
-        OrderRoom order = orderList.get(position);
-        holder.orderDetails.setText(order.name + " x" + order.quantity); // Use OrderRoom fields
+    public void onBindViewHolder(OrderViewHolder holder, int position) {
+        OrderRoom order = orders.get(position);
+
+        holder.orderIdText.setText("Order ID: " + order.orderID);
+        holder.flowerNameText.setText("Flower: " + order.name);
+        holder.quantityText.setText("Quantity: " + order.quantity);
+
+        // add more if needed
     }
 
     @Override
     public int getItemCount() {
-        return orderList.size();
+        return orders.size();
     }
 
-    static class OrderViewHolder extends RecyclerView.ViewHolder {
-        TextView orderDetails;
+    public static class OrderViewHolder extends RecyclerView.ViewHolder {
 
-        public OrderViewHolder(@NonNull View itemView) {
+        TextView orderIdText, flowerNameText, quantityText;
+
+        public OrderViewHolder(View itemView) {
             super(itemView);
-            orderDetails = itemView.findViewById(R.id.textOrderDetails);
+            orderIdText = itemView.findViewById(R.id.orderIdText);
+            flowerNameText = itemView.findViewById(R.id.flowerNameText);
+            quantityText = itemView.findViewById(R.id.quantityText);
         }
     }
 }
