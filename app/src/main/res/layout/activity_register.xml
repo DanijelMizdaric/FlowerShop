@@ -80,12 +80,12 @@
         app:layout_constraintVertical_bias="0.784" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/userTextID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/emailTextiD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -93,12 +93,12 @@
         app:layout_constraintVertical_bias="0.712" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/emailTextiD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/passTextID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -106,7 +106,7 @@
         app:layout_constraintVertical_bias="0.77" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/passTextID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

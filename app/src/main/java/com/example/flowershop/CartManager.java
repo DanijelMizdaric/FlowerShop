@@ -60,7 +60,7 @@ public class CartManager {
             int newOrderID = (lastOrderID == null) ? 1 : lastOrderID + 1;
 
             for (FlowerRoom flower : flowers) {
-                OrderRoom order = new OrderRoom(newOrderID, flower.getName(), flower.getQuantity());
+                OrderRoom order = new OrderRoom(newOrderID, flower.getName(), flower.getQuantity(), flower.getUsername());
                 orderDao.insertOrder(order);
                 flowerDao.delete(flower);
             }

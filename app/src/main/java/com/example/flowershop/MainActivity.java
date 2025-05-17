@@ -16,9 +16,13 @@ public class MainActivity extends AppCompatActivity {
     EditText usernameInput, passwordInput;
     Button loginButton, registerButton;
 
+    private UserDAO userDao;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         usernameInput = findViewById(R.id.usernameID);
@@ -27,19 +31,33 @@ public class MainActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.button2);
 
         loginButton.setOnClickListener(v -> {
-            String user = usernameInput.getText().toString();
-            String pass = passwordInput.getText().toString();
+            String inputUsername = usernameInput.getText().toString().trim();
+            String inputPassword = passwordInput.getText().toString().trim();
 
-            // Simple check — replace this with real authentication later
-            if (user.equals("admin") && pass.equals("1234")) {
-                Intent intent = new Intent(MainActivity.this, HomeScreen.class);
-                startActivity(intent);
-                Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                finish(); // Optional: closes login screen
-            } else {
-                Toast.makeText(MainActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
-            }
+            // Use a background thread to query Room
+            new Thread(() -> {
+                FlowerDB db = FlowerDB.getDatabase(getApplicationContext());
+                UserDAO userDao = db.userDAO();
+
+                User userData = userDao.getUsername(inputUsername);
+
+                runOnUiThread(() -> {
+                    if (userData != null && userData.password.equals(inputPassword)) {
+                        // Login successful
+                        Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, HomeScreen.class);
+                        intent.putExtra("username",userData.username);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        // Login failed
+                        Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }).start();
         });
+
+
 
         registerButton.setOnClickListener(v -> {
             Intent intent = new Intent (MainActivity.this, Register.class);

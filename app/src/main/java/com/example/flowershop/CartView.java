@@ -34,7 +34,7 @@ public class CartView extends AppCompatActivity {
         cartListView = findViewById(R.id.cartViewID);
         checkoutButton = findViewById(R.id.checkoutBtnID);
         backbtn = findViewById(R.id.backBtn);
-
+        String username = getIntent().getStringExtra("username");
         backbtn.setOnClickListener(v -> {
             Intent intent = new Intent(CartView.this, HomeScreen.class);
             startActivity(intent);
@@ -72,9 +72,13 @@ public class CartView extends AppCompatActivity {
             List<FlowerRoom> cartItems = cartManager.getCartFlowers().getValue();
             if (cartItems != null && !cartItems.isEmpty()) {
                 cartManager.checkoutAllFlowers(cartItems);  // New method
-                Toast.makeText(this, "Purchase completed!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(CartView.this, HomeScreen.class));
+                Intent intent = new Intent(CartView.this, HomeScreen.class);
+                intent.putExtra("username", username);
+                startActivity(intent);
                 finish();
+                Toast.makeText(this, "Purchase completed!", Toast.LENGTH_SHORT).show();
+
+
             } else {
                 Toast.makeText(this, "Cart is empty!", Toast.LENGTH_SHORT).show();
             }

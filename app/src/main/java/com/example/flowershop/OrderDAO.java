@@ -20,4 +20,6 @@ public interface OrderDAO {
 
     @Query("DELETE FROM orders")
     void deleteAllOrders();
+    @Query("SELECT * FROM orders WHERE username =:username")
+    List<OrderRoom> getOrdersForUser(String username);
 }
