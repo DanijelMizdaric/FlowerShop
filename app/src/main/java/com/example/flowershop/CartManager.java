@@ -53,13 +53,19 @@ public class CartManager {
             loadCartFlowers();  // Refresh cart after deletion
         });
     }
-    
-    public void checkoutFlower(FlowerRoom flower) {
-        executorService.execute(()->{
-            OrderRoom order = new OrderRoom(flower.getName(), flower.getQuantity()); // You may want to check nulls
-            orderDao.insertOrder(order);
-            flowerDao.delete(flower); // Optional: clear it from the cart after ordering
-            loadCartFlowers(); // Refresh cart l
+
+    public void checkoutAllFlowers(List<FlowerRoom> flowers) {
+        executorService.execute(() -> {
+            Integer lastOrderID = orderDao.getLastOrderID();
+            int newOrderID = (lastOrderID == null) ? 1 : lastOrderID + 1;
+
+            for (FlowerRoom flower : flowers) {
+                OrderRoom order = new OrderRoom(newOrderID, flower.getName(), flower.getQuantity(), flower.getUsername());
+                orderDao.insertOrder(order);
+                flowerDao.delete(flower);
+            }
+
+            loadCartFlowers();
         });
     }
 

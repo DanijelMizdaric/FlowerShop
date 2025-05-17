@@ -15,6 +15,11 @@ public interface OrderDAO {
     @Query("SELECT * FROM orders")
     List<OrderRoom> getAllOrders();
 
+    @Query("SELECT MAX(orderID) FROM orders")
+    Integer getLastOrderID();
+
     @Query("DELETE FROM orders")
     void deleteAllOrders();
+    @Query("SELECT * FROM orders WHERE username =:username")
+    List<OrderRoom> getOrdersForUser(String username);
 }

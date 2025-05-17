@@ -11,11 +11,13 @@ public class FlowerRoom {
 
     private String name;
     private int quantity;
+    private String username;
 
     // Constructor
-    public FlowerRoom(String name, int quantity) {
+    public FlowerRoom(String name, int quantity, String username) {
         this.name = name;
         this.quantity = quantity;
+        this.username = username;
     }
 
     // Getters and Setters
@@ -37,6 +39,12 @@ public class FlowerRoom {
 
     public int getQuantity() {
         return quantity;
+    }
+    public String getUsername(){
+        return username;
+    }
+    public void setUsername(String username){
+        this.username=username;
     }
 
     public void setQuantity(int quantity) {
