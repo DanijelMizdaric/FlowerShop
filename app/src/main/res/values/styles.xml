@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="FlowerShopTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/caveat</item> <!-- use any available font -->
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

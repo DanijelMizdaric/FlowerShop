@@ -57,6 +57,12 @@
                 android:layout_height="wrap_content"
                 android:text="Go to Cart" />
 
+            <Button
+                android:id="@+id/checkOrderID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check Active Orders" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -111,7 +117,7 @@
                             android:text="-" />
 
                     </LinearLayout>
-            </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -392,7 +398,7 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-            </LinearLayout>
+        </LinearLayout>
 
 
     </ScrollView>

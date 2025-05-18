@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textOrderDetails"
-        android:layout_width="match_parent"
+        android:id="@+id/orderIdText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Order details here"
-        android:textSize="18sp"
-        android:textColor="#000000" />
+        android:text="Order ID: "
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/flowerNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flower: "/>
+
+    <TextView
+        android:id="@+id/quantityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity: "/>
+
+    <!-- Add other info as needed -->
+
 </LinearLayout>
