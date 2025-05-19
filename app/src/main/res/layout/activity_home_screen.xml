@@ -1,406 +1,539 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".HomeScreen">
 
-    <LinearLayout
-        android:id="@+id/navbar"
+    <!-- Top App Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topAppBar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#CCCCCC"
-        android:padding="8dp"
+        android:layout_height="60dp"
+        android:background="#FF7F50"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/backBtnID"
-            android:layout_width="24dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Back" />
-
-        <EditText
-            android:id="@+id/searchbarID"
+        <TextView
+            android:id="@+id/homeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="Search" />
-    </LinearLayout>
+            android:text="Flower Shop"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:fontFamily="@font/caveat"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Back Button -->
+
+    <!-- Search Bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Search flowers..."
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ScrollView wrapping flower items -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/navbar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@id/searchBarLayout"
+        app:layout_constraintBottom_toTopOf="@id/navigationButtons"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:id="@+id/scrollContainer"
+            android:id="@+id/flowersContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/gotoCartID"
+            <!-- Flower Item 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Go to Cart" />
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-            <Button
-                android:id="@+id/checkOrderID"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage1"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rose" />
+
+                    <TextView
+                        android:id="@+id/flowerName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rose"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/flowerPrice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$12.99"
+                        android:textColor="#777"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Flower Item 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Check Active Orders" />
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Rose" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="129dp"
-                    android:layout_height="135dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_action_name" />
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                    <Button
-                        android:id="@+id/btnCart3ID"
-                        android:layout_width="209dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_weight="1"
-                        android:text="Add to Cart" />
-                    <LinearLayout
+                    <ImageView
+                        android:id="@+id/flowerImage2"
                         android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/lily" />
+
+                    <TextView
+                        android:id="@+id/flowerName2"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:text="Lily"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
 
-                        <Button
-                            android:id="@+id/addQuantity3ID"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="start"
-                            android:text="+" />
-
-                        <Button
-                            android:id="@+id/subtractQuantity2ID"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="end"
-                            android:text="-" />
-
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="33dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Lily" />
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="135dp"
-                    android:layout_height="128dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_action_name" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btnCartID"
-                        android:layout_width="211dp"
+                    <TextView
+                        android:id="@+id/flowerPrice2"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Add to Cart" />
+                        android:text="$9.99"
+                        android:textColor="#777"
+                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
 
                         <Button
-                            android:id="@+id/addQuantityID"
-                            android:layout_width="0dp"
+                            android:id="@+id/minusButton2"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="+" />
-
-                        <Button
-                            android:id="@+id/subtractQuantity4ID"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="-" />
-
                     </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Tulip" />
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="129dp"
-                    android:layout_height="135dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_action_name" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btnCart5ID"
-                        android:layout_width="209dp"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton2"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_weight="1"
-                        android:text="Add to Cart" />
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Flower Item 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage3"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/tulip" />
+
+                    <TextView
+                        android:id="@+id/flowerName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tulip"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/flowerPrice3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$14.99"
+                        android:textColor="#777"
+                        android:textSize="16sp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
 
                         <Button
-                            android:id="@+id/addQuantity5ID"
-                            android:layout_width="0dp"
+                            android:id="@+id/minusButton3"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="start"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="+" />
-
-                        <Button
-                            android:id="@+id/subtractQuantity5ID"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="end"
-                            android:text="-" />
-
                     </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Peony" />
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="129dp"
-                    android:layout_height="135dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_action_name" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btnCart6ID"
-                        android:layout_width="209dp"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton3"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_weight="1"
-                        android:text="Add to Cart" />
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage4"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/daisy" />
+
+                    <TextView
+                        android:id="@+id/flowerName4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daisy"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/flowerPrice4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$14.99"
+                        android:textColor="#777"
+                        android:textSize="16sp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
 
                         <Button
-                            android:id="@+id/addQuantity6ID"
-                            android:layout_width="0dp"
+                            android:id="@+id/minusButton4"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="start"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="+" />
-
-                        <Button
-                            android:id="@+id/subtractQuantity6ID"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="end"
-                            android:text="-" />
-
                     </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Daisy" />
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="129dp"
-                    android:layout_height="135dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_action_name" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btnCart7ID"
-                        android:layout_width="209dp"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton4"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_weight="1"
-                        android:text="Add to Cart" />
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage5"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/iris" />
+
+                    <TextView
+                        android:id="@+id/flowerName5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Iris"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/flowerPrice5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$14.99"
+                        android:textColor="#777"
+                        android:textSize="16sp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
 
                         <Button
-                            android:id="@+id/addQuantity7ID"
-                            android:layout_width="0dp"
+                            android:id="@+id/minusButton5"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="start"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="+" />
-
-                        <Button
-                            android:id="@+id/subtractQuantity7ID"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="end"
-                            android:text="-" />
-
                     </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Iris" />
-
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="129dp"
-                    android:layout_height="135dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_action_name" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btnCart8ID"
-                        android:layout_width="209dp"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton5"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_weight="1"
-                        android:text="Add to Cart" />
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage6"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/peony" />
+
+                    <TextView
+                        android:id="@+id/flowerName6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Peony"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/flowerPrice6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$14.99"
+                        android:textColor="#777"
+                        android:textSize="16sp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
 
                         <Button
-                            android:id="@+id/addQuantity8ID"
-                            android:layout_width="0dp"
+                            android:id="@+id/minusButton6"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="start"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="+" />
-
-                        <Button
-                            android:id="@+id/subtractQuantity8ID"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_gravity="end"
-                            android:text="-" />
-
                     </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
                 </LinearLayout>
-            </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
         </LinearLayout>
-
-
     </ScrollView>
+
+    <!-- Navigation Buttons -->
+    <LinearLayout
+        android:id="@+id/navigationButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backBtnID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Back"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewCartButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cart"
+            style="@style/Widget.MaterialComponents.Button" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewOrdersButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Orders"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

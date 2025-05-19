@@ -12,6 +12,8 @@ import android.widget.Toast;
 import android.widget.ScrollView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.card.MaterialCardView;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,36 +40,36 @@ public class HomeScreen extends AppCompatActivity {
         cartManager = new CartManager(this);
 
         backbtn = findViewById(R.id.backBtnID);
-        cartBtn1 = findViewById(R.id.btnCart3ID);
-        cartBtn2 = findViewById(R.id.btnCartID);
-        cartBtn3 = findViewById(R.id.btnCart5ID);
-        cartBtn4 = findViewById(R.id.btnCart6ID);
-        cartBtn5 = findViewById(R.id.btnCart7ID);
-        cartBtn6 = findViewById(R.id.btnCart8ID);
-        addBtn1 = findViewById(R.id.addQuantity3ID);
-        addBtn2 = findViewById(R.id.addQuantityID);
-        addBtn3 = findViewById(R.id.addQuantity5ID);
-        addBtn4 = findViewById(R.id.addQuantity6ID);
-        addBtn5 = findViewById(R.id.addQuantity7ID);
-        addBtn6 = findViewById(R.id.addQuantity8ID);
-        removeBtn1 = findViewById(R.id.subtractQuantity2ID);
-        removeBtn2 = findViewById(R.id.subtractQuantity4ID);
-        removeBtn3 = findViewById(R.id.subtractQuantity5ID);
-        removeBtn4 = findViewById(R.id.subtractQuantity6ID);
-        removeBtn5 = findViewById(R.id.subtractQuantity7ID);
-        removeBtn6 = findViewById(R.id.subtractQuantity8ID);
-        searchBar = findViewById(R.id.searchbarID);
+        cartBtn1 = findViewById(R.id.addToCartButton1);
+        cartBtn2 = findViewById(R.id.addToCartButton2);
+        cartBtn3 = findViewById(R.id.addToCartButton3);
+        cartBtn4 = findViewById(R.id.addToCartButton4);
+        cartBtn5 = findViewById(R.id.addToCartButton5);
+        cartBtn6 = findViewById(R.id.addToCartButton6);
+        addBtn1 = findViewById(R.id.plusButton1);
+        addBtn2 = findViewById(R.id.plusButton2);
+        addBtn3 = findViewById(R.id.plusButton3);
+        addBtn4 = findViewById(R.id.plusButton4);
+        addBtn5 = findViewById(R.id.plusButton5);
+        addBtn6 = findViewById(R.id.plusButton6);
+        removeBtn1 = findViewById(R.id.minusButton1);
+        removeBtn2 = findViewById(R.id.minusButton2);
+        removeBtn3 = findViewById(R.id.minusButton3);
+        removeBtn4 = findViewById(R.id.minusButton4);
+        removeBtn5 = findViewById(R.id.minusButton5);
+        removeBtn6 = findViewById(R.id.minusButton6);
+        searchBar = findViewById(R.id.searchBar);
         scrollview = findViewById(R.id.scrollView);
-        goCart = findViewById(R.id.gotoCartID);
-        goOrders = findViewById(R.id.checkOrderID);
+        goCart = findViewById(R.id.viewCartButton);
+        goOrders = findViewById(R.id.viewOrdersButton);
 
         Map<String, Integer> flowerMap = new HashMap<>();
-        flowerMap.put("rose", R.id.textView3);
-        flowerMap.put("lily", R.id.textView4);
-        flowerMap.put("tulip", R.id.textView5);
-        flowerMap.put("peony", R.id.textView6);
-        flowerMap.put("daisy", R.id.textView7);
-        flowerMap.put("iris", R.id.textView8);
+        flowerMap.put("rose", R.id.flowerItem1);
+        flowerMap.put("lily", R.id.flowerItem2);
+        flowerMap.put("tulip", R.id.flowerItem3);
+        flowerMap.put("daisy", R.id.flowerItem4);
+        flowerMap.put("iris", R.id.flowerItem5);
+        flowerMap.put("peony", R.id.flowerItem6);
         String Username = getIntent().getStringExtra("username");
 
         // Navigate to MainActivity when back button is clicked
@@ -81,19 +83,21 @@ public class HomeScreen extends AppCompatActivity {
             String search = searchBar.getText().toString().trim().toLowerCase();
 
             if (flowerMap.containsKey(search)) {
-                int viewId = flowerMap.get(search);
-                TextView flowerLabel = findViewById(viewId);
+                int cardViewId = flowerMap.get(search);
+                MaterialCardView cardView = findViewById(cardViewId);
 
-                // Scroll to the flower
                 scrollview.post(() -> {
-                    scrollview.scrollTo(0, flowerLabel.getTop());
+                    int scrollToY = cardView.getTop() - scrollview.getPaddingTop();
+                    scrollview.smoothScrollTo(0, scrollToY);
 
-                    // Optional: Highlight the text view briefly
-                    flowerLabel.setBackgroundColor(Color.YELLOW);
+                    cardView.setCardBackgroundColor(Color.YELLOW);
                     new Handler().postDelayed(() -> {
-                        flowerLabel.setBackgroundColor(Color.TRANSPARENT);
-                    }, 5000);
+                        cardView.setCardBackgroundColor(Color.WHITE);
+                    }, 2000);
                 });
+
+
+
 
             } else {
                 Toast.makeText(this, "Flower not found", Toast.LENGTH_SHORT).show();
@@ -161,21 +165,21 @@ public class HomeScreen extends AppCompatActivity {
             a=1;
         });
         cartBtn4.setOnClickListener(v -> {
-            FlowerRoom peony = new FlowerRoom("Peony", a, Username); // Assuming FlowerRoom constructor (name, quantity)
-            cartManager.addToCart(peony);  // Add "Lily" to the cart
-            Toast.makeText(HomeScreen.this, "Peony added to cart", Toast.LENGTH_SHORT).show();
-            a=1;
-        });
-        cartBtn5.setOnClickListener(v -> {
             FlowerRoom daisy = new FlowerRoom("Daisy", a, Username); // Assuming FlowerRoom constructor (name, quantity)
             cartManager.addToCart(daisy);  // Add "Lily" to the cart
             Toast.makeText(HomeScreen.this, "Daisy added to cart", Toast.LENGTH_SHORT).show();
             a=1;
         });
-        cartBtn6.setOnClickListener(v -> {
+        cartBtn5.setOnClickListener(v -> {
             FlowerRoom iris = new FlowerRoom("Iris", a, Username); // Assuming FlowerRoom constructor (name, quantity)
             cartManager.addToCart(iris);  // Add "Lily" to the cart
             Toast.makeText(HomeScreen.this, "Iris added to cart", Toast.LENGTH_SHORT).show();
+            a=1;
+        });
+        cartBtn6.setOnClickListener(v -> {
+            FlowerRoom peony = new FlowerRoom("Peony", a, Username); // Assuming FlowerRoom constructor (name, quantity)
+            cartManager.addToCart(peony);  // Add "Lily" to the cart
+            Toast.makeText(HomeScreen.this, "Peony added to cart", Toast.LENGTH_SHORT).show();
             a=1;
         });
 
@@ -196,6 +200,7 @@ public class HomeScreen extends AppCompatActivity {
     public void addQuantity(){
         a++;
         Toast.makeText(HomeScreen.this, "Added quantity",Toast.LENGTH_SHORT).show();
+
 
     }
     public void removeQuantity(){
