@@ -20,7 +20,7 @@ public class FlowerRoom {
         this.username = username;
     }
 
-    // Getters and Setters
+
     public int getId() {
         return id;
     }

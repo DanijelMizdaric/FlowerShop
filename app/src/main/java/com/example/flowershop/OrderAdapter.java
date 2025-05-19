@@ -32,7 +32,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.flowerNameText.setText("Flower: " + order.name);
         holder.quantityText.setText("Quantity: " + order.quantity);
 
-        // add more if needed
+
     }
 
     @Override

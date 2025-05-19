@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             String inputUsername = usernameInput.getText().toString().trim();
             String inputPassword = passwordInput.getText().toString().trim();
 
-            // Use a background thread to query Room
+
             new Thread(() -> {
                 FlowerDB db = FlowerDB.getDatabase(getApplicationContext());
                 UserDAO userDao = db.userDAO();
@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
                 runOnUiThread(() -> {
                     if (userData != null && userData.password.equals(inputPassword)) {
-                        // Login successful
+
                         Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this, HomeScreen.class);
                         intent.putExtra("username",userData.username);
                         startActivity(intent);
                         finish();
                     } else {
-                        // Login failed
+
                         Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
                     }
                 });

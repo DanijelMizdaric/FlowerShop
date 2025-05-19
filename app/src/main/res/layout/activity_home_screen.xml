@@ -8,7 +8,7 @@
     android:background="#FFFFFF"
     tools:context=".HomeScreen">
 
-    <!-- Top App Bar -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topAppBar"
         android:layout_width="0dp"
@@ -33,9 +33,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Back Button -->
 
-    <!-- Search Bar -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/searchBarLayout"
         android:layout_width="0dp"
@@ -55,7 +53,7 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- ScrollView wrapping flower items -->
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -75,7 +73,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Flower Item 1 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/flowerItem1"
                 android:layout_width="match_parent"
@@ -144,7 +141,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Flower Item 2 -->
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/flowerItem2"
                 android:layout_width="match_parent"
@@ -213,7 +210,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Flower Item 3 -->
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/flowerItem3"
                 android:layout_width="match_parent"
@@ -489,7 +486,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Navigation Buttons -->
+
     <LinearLayout
         android:id="@+id/navigationButtons"
         android:layout_width="0dp"

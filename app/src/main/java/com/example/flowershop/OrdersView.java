@@ -42,7 +42,7 @@ public class OrdersView extends AppCompatActivity {
         new Thread(() -> {
             List<OrderRoom> orders = db.orderDao().getOrdersForUser(Username);
 
-            // Update UI on main thread
+
             runOnUiThread(() -> {
                 OrderAdapter adapter = new OrderAdapter(orders);
                 recyclerView.setAdapter(adapter);
