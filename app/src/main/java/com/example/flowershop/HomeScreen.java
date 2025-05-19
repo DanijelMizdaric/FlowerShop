@@ -28,7 +28,7 @@ public class HomeScreen extends AppCompatActivity {
     EditText searchBar;
     ScrollView scrollview;
     int a=1;
-    CartManager cartManager; // Declare CartManager
+    CartManager cartManager;
 
     @SuppressLint({"MissingInflatedId", "CutPasteId", "WrongViewCast"})
     @Override
@@ -36,7 +36,7 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        // Initialize the CartManager with the current context
+
         cartManager = new CartManager(this);
 
         backbtn = findViewById(R.id.backBtnID);
@@ -72,7 +72,7 @@ public class HomeScreen extends AppCompatActivity {
         flowerMap.put("peony", R.id.flowerItem6);
         String Username = getIntent().getStringExtra("username");
 
-        // Navigate to MainActivity when back button is clicked
+
         backbtn.setOnClickListener(v -> {
             Intent intent = new Intent(HomeScreen.this, MainActivity.class);
             startActivity(intent);
@@ -143,47 +143,47 @@ public class HomeScreen extends AppCompatActivity {
             removeQuantity();
         });
 
-        // Add "Rose" to cart when cartBtn1 is clicked
+
         cartBtn1.setOnClickListener(v -> {
-            FlowerRoom rose = new FlowerRoom("Rose", a, Username); // Assuming FlowerRoom constructor (name, quantity)
+            FlowerRoom rose = new FlowerRoom("Rose", a, Username);
             cartManager.addToCart(rose);  // Add "Rose" to the cart
             Toast.makeText(HomeScreen.this, "Rose added to cart", Toast.LENGTH_SHORT).show();
             a=1;
         });
 
-        // Add "Lily" to cart when cartBtn2 is clicked
+
         cartBtn2.setOnClickListener(v -> {
-            FlowerRoom lily = new FlowerRoom("Lily", a, Username); // Assuming FlowerRoom constructor (name, quantity)
+            FlowerRoom lily = new FlowerRoom("Lily", a, Username);
             cartManager.addToCart(lily);  // Add "Lily" to the cart
             Toast.makeText(HomeScreen.this, "Lily added to cart", Toast.LENGTH_SHORT).show();
             a=1;
         });
         cartBtn3.setOnClickListener(v -> {
-            FlowerRoom tulip = new FlowerRoom("Tulip", a, Username); // Assuming FlowerRoom constructor (name, quantity)
+            FlowerRoom tulip = new FlowerRoom("Tulip", a, Username);
             cartManager.addToCart(tulip);  // Add "Lily" to the cart
             Toast.makeText(HomeScreen.this, "Tulip added to cart", Toast.LENGTH_SHORT).show();
             a=1;
         });
         cartBtn4.setOnClickListener(v -> {
-            FlowerRoom daisy = new FlowerRoom("Daisy", a, Username); // Assuming FlowerRoom constructor (name, quantity)
+            FlowerRoom daisy = new FlowerRoom("Daisy", a, Username);
             cartManager.addToCart(daisy);  // Add "Lily" to the cart
             Toast.makeText(HomeScreen.this, "Daisy added to cart", Toast.LENGTH_SHORT).show();
             a=1;
         });
         cartBtn5.setOnClickListener(v -> {
-            FlowerRoom iris = new FlowerRoom("Iris", a, Username); // Assuming FlowerRoom constructor (name, quantity)
+            FlowerRoom iris = new FlowerRoom("Iris", a, Username);
             cartManager.addToCart(iris);  // Add "Lily" to the cart
             Toast.makeText(HomeScreen.this, "Iris added to cart", Toast.LENGTH_SHORT).show();
             a=1;
         });
         cartBtn6.setOnClickListener(v -> {
-            FlowerRoom peony = new FlowerRoom("Peony", a, Username); // Assuming FlowerRoom constructor (name, quantity)
+            FlowerRoom peony = new FlowerRoom("Peony", a, Username);
             cartManager.addToCart(peony);  // Add "Lily" to the cart
             Toast.makeText(HomeScreen.this, "Peony added to cart", Toast.LENGTH_SHORT).show();
             a=1;
         });
 
-        // Navigate to CartView activity when goCart button is clicked
+
         goCart.setOnClickListener(v -> {
             Intent intent = new Intent(HomeScreen.this, CartView.class);
             intent.putExtra("username", Username);

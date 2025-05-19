@@ -44,7 +44,7 @@ public class CartView extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, displayList);
         cartListView.setAdapter(adapter);
 
-        // Observe cart items from CartManager
+
         cartManager.getCartFlowers().observe(this, new Observer<List<FlowerRoom>>() {
             @Override
             public void onChanged(List<FlowerRoom> flowers) {
@@ -53,14 +53,13 @@ public class CartView extends AppCompatActivity {
                 flowerList.addAll(flowers);
 
                 for (FlowerRoom flower : flowers) {
-                    displayList.add(flower.getName());  // Or .getTitle() depending on your model
+                    displayList.add(flower.getName());
                 }
 
                 adapter.notifyDataSetChanged();
             }
         });
 
-        // Remove item on long click
         cartListView.setOnItemLongClickListener((parent, view, position, id) -> {
             FlowerRoom flower = flowerList.get(position);
             cartManager.removeFromCart(flower);
@@ -71,7 +70,7 @@ public class CartView extends AppCompatActivity {
         checkoutButton.setOnClickListener(v -> {
             List<FlowerRoom> cartItems = cartManager.getCartFlowers().getValue();
             if (cartItems != null && !cartItems.isEmpty()) {
-                cartManager.checkoutAllFlowers(cartItems);  // New method
+                cartManager.checkoutAllFlowers(cartItems);
                 Intent intent = new Intent(CartView.this, HomeScreen.class);
                 intent.putExtra("username", username);
                 startActivity(intent);

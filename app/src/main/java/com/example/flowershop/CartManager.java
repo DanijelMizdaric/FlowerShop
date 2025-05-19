@@ -17,40 +17,37 @@ public class CartManager {
     private MutableLiveData<List<FlowerRoom>> cartFlowers;
     private ExecutorService executorService;
 
-    // Private constructor to prevent instantiation
+
     CartManager(Context context) {
         FlowerDB db = FlowerDB.getDatabase(context);
         flowerDao = db.flowerDao();
         orderDao = db.orderDao();
         cartFlowers = new MutableLiveData<>();
-        executorService = Executors.newSingleThreadExecutor();  // Create an executor for background tasks
-        loadCartFlowers();  // Load cart items
+        executorService = Executors.newSingleThreadExecutor();
+        loadCartFlowers();
     }
 
-    // Method to get the instance of CartManager
 
-
-    // Load flowers from the database (cart items)
     private void loadCartFlowers() {
         executorService.execute(() -> {
             List<FlowerRoom> flowers = flowerDao.getAllFlowers();
-            cartFlowers.postValue(flowers); // Update LiveData in the main thread
+            cartFlowers.postValue(flowers);
         });
     }
 
     // Add a flower to the cart
     public void addToCart(FlowerRoom flower) {
         executorService.execute(() -> {
-            flowerDao.insert(flower);  // Perform database operation off the main thread
-            loadCartFlowers();  // Refresh cart after insertion
+            flowerDao.insert(flower);
+            loadCartFlowers();
         });
     }
 
     // Remove a flower from the cart
     public void removeFromCart(FlowerRoom flower) {
         executorService.execute(() -> {
-            flowerDao.delete(flower);  // Perform database operation off the main thread
-            loadCartFlowers();  // Refresh cart after deletion
+            flowerDao.delete(flower);
+            loadCartFlowers();
         });
     }
 
@@ -69,7 +66,7 @@ public class CartManager {
         });
     }
 
-    // Get the current cart flowers (LiveData for observing changes)
+
     public LiveData<List<FlowerRoom>> getCartFlowers() {
         return cartFlowers;
     }

@@ -9,7 +9,7 @@
     android:background="#FFFFFF"
     tools:context=".CartView">
 
-    <!-- Top App Bar -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topAppBar"
         android:layout_width="0dp"
@@ -62,7 +62,7 @@
         android:layout_marginEnd="16dp"
         style="@style/Widget.MaterialComponents.Button"/>
 
-    <!-- Cart ListView -->
+
     <ListView
         android:id="@+id/cartViewID"
         android:layout_width="0dp"
