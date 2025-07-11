@@ -65,15 +65,30 @@
 
     <ListView
         android:id="@+id/cartViewID"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="16dp"
+        android:layout_width="410dp"
+        android:layout_height="514dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"
-        app:layout_constraintTop_toBottomOf="@id/checkoutBtnID"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkoutBtnID"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/removeID"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cartViewID"
+        app:layout_constraintVertical_bias="0.448" />
 </androidx.constraintlayout.widget.ConstraintLayout>

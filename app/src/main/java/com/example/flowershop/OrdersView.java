@@ -2,7 +2,11 @@ package com.example.flowershop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -13,40 +17,61 @@ import java.util.List;
 
 public class OrdersView extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    FlowerDB db;
+    private RecyclerView recyclerView;
+    private FlowerDB db;
+    private Button backBtn;
+    private TextView emptyView;
 
-    Button backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders_view);
 
+        // Initialize views
         recyclerView = findViewById(R.id.recyclerViewOrders);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         backBtn = findViewById(R.id.buttonBackID);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
+        emptyView = findViewById(R.id.emptyOrdersView);
+
+        // Setup RecyclerView
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
+
+        // Get database instance
         db = FlowerDB.getDatabase(getApplicationContext());
+        String username = getIntent().getStringExtra("username");
 
-        String Username = getIntent().getStringExtra("username");
-
-        backBtn.setOnClickListener(v->{
+        // Back button click handler
+        backBtn.setOnClickListener(v -> {
             Intent intent = new Intent(OrdersView.this, HomeScreen.class);
-            intent.putExtra("username", Username);
+            intent.putExtra("username", username);
             startActivity(intent);
             finish();
         });
 
-
+        // Load orders in background thread
         new Thread(() -> {
-            List<OrderRoom> orders = db.orderDao().getOrdersForUser(Username);
+            try {
+                List<OrderRoom> orders = db.orderDao().getOrdersForUser(username);
+                List<OrderWithFlowers> orderDetails = db.orderDao().getOrdersWithFlowers(username);
+                Log.d("OrdersView", "Orders count: " + orders.size());
 
-
-            runOnUiThread(() -> {
-                OrderAdapter adapter = new OrderAdapter(orders);
-                recyclerView.setAdapter(adapter);
-            });
+                runOnUiThread(() -> {
+                    if (orderDetails == null || orderDetails.isEmpty()) {
+                        recyclerView.setVisibility(View.GONE);
+                        emptyView.setVisibility(View.VISIBLE);
+                    } else {
+                        emptyView.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
+                        OrderAdapter adapter = new OrderAdapter(orderDetails);
+                        recyclerView.setAdapter(adapter);
+                    }
+                });
+            } catch (Exception e) {
+                runOnUiThread(() ->
+                        Toast.makeText(this, "Error loading orders", Toast.LENGTH_SHORT).show());
+            }
         }).start();
     }
 }

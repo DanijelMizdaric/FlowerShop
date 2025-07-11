@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/flowerImage"
+        android:layout_width="396dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/iris"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        tools:layout_editor_absoluteX="7dp" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/x"
+        app:layout_constraintBottom_toTopOf="@+id/flowerImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/RoseInfoID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Iris"
+        app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/RoseTextID"
+        android:layout_width="396dp"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur dictum mi, et interdum elit consectetur id. Quisque eget mattis dolor, at luctus velit. Cras et sem gravida nisl sagittis vehicula. Aenean aliquet, purus vulputate elementum mattis, elit erat maximus erat, convallis rutrum nulla justo id enim. Etiam congue consequat rutrum. Sed vel laoreet est, non pharetra tellus. Aliquam placerat, erat nec ullamcorper placerat, augue enim sagittis diam, eu tincidunt est tellus quis elit. Nam at dapibus velit. Sed erat sem, tempus ac feugiat id, porta sed lorem. Nulla dolor lectus, volutpat vitae commodo consequat, sollicitudin ut libero. Ut sagittis pellentesque viverra. Nulla pellentesque egestas mauris, ut placerat turpis hendrerit nec. Sed ut dolor nibh.  Suspendisse potenti. Maecenas sed tempor est. Phasellus iaculis commodo eros, in lacinia nisi placerat vitae. Quisque id libero velit. Proin ut quam ornare, dapibus libero ac, ultrices turpis. Maecenas consectetur laoreet dui a consectetur. Vivamus a urna lacinia, scelerisque orci sit amet, ornare leo. Maecenas sodales diam quam, in congue risus consequat eget."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.283" />
+</androidx.constraintlayout.widget.ConstraintLayout>
