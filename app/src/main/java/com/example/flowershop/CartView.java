@@ -10,8 +10,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class CartView extends AppCompatActivity {
 
@@ -24,10 +27,13 @@ public class CartView extends AppCompatActivity {
 
     private CartManager cartManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_view);
+        FlowerDAO flowerDao = FlowerDB.getDatabase(this).flowerDao();
+        OrderDAO orderDao = FlowerDB.getDatabase(this).orderDao();
 
         cartManager = new CartManager(this);
 
@@ -53,7 +59,11 @@ public class CartView extends AppCompatActivity {
                 flowerList.addAll(flowers);
 
                 for (FlowerRoom flower : flowers) {
-                    displayList.add(flower.getName());  // Or .getTitle() depending on your model
+                    String itemDisplay = String.format("%s - $%.2f (Qty: %d)",
+                            flower.getName(),
+                            flower.getPrice(),
+                            flower.getQuantity());
+                    displayList.add(itemDisplay);
                 }
 
                 adapter.notifyDataSetChanged();
@@ -71,17 +81,19 @@ public class CartView extends AppCompatActivity {
         checkoutButton.setOnClickListener(v -> {
             List<FlowerRoom> cartItems = cartManager.getCartFlowers().getValue();
             if (cartItems != null && !cartItems.isEmpty()) {
-                cartManager.checkoutAllFlowers(cartItems);  // New method
+                cartManager.checkoutAllFlowers(cartItems); // <- now this method is actually used
                 Intent intent = new Intent(CartView.this, HomeScreen.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
                 finish();
                 Toast.makeText(this, "Purchase completed!", Toast.LENGTH_SHORT).show();
-
-
             } else {
                 Toast.makeText(this, "Cart is empty!", Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+    private int generateNewOrderID() {
+        return (int) (System.currentTimeMillis() % Integer.MAX_VALUE);
     }
 }

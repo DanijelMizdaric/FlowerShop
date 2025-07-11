@@ -1,5 +1,6 @@
 package com.example.flowershop;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,43 +13,60 @@ import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
 
-    private List<OrderRoom> orders;
+    private List<OrderWithFlowers> orders;
 
-    public OrderAdapter(List<OrderRoom> orders) {
+    public OrderAdapter(List<OrderWithFlowers> orders) {
         this.orders = orders;
     }
 
+    @NonNull
     @Override
-    public OrderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.order_item, parent, false);
+    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_order, parent, false);
         return new OrderViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(OrderViewHolder holder, int position) {
-        OrderRoom order = orders.get(position);
+    public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
+        OrderWithFlowers orderWithFlowers = orders.get(position);
+        OrderRoom order = orderWithFlowers.order;
+        List<OrderFlower> flowers = orderWithFlowers.flowers;
+        Log.d("OrderAdapter", "Order ID: " + order.id + " has " + (flowers != null ? flowers.size() : 0) + " flowers.");
+        // Set order date
+        holder.orderDate.setText("Order Date: " + order.date); // Change to your actual date field
 
-        holder.orderIdText.setText("Order ID: " + order.orderID);
-        holder.flowerNameText.setText("Flower: " + order.name);
-        holder.quantityText.setText("Quantity: " + order.quantity);
+        // Build flowers list text
+        StringBuilder flowersText = new StringBuilder();
+        double total = 0;
+        Log.d("OrderAdapter", "Order id: " + order.id + ", Flowers count: " + flowers.size());
+        for (OrderFlower flower : flowers) {
+            flowersText.append(String.format("• %s (Qty: %d) - $%.2f\n",
+                    flower.getName(),
+                    flower.getQuantity(),
+                    flower.getPrice()));
+            total += flower.getPrice() * flower.getQuantity();
+        }
 
-        // add more if needed
+        holder.flowersList.setText(flowersText.toString());
+        holder.orderTotal.setText(String.format("Total: $%.2f", total));
     }
 
     @Override
     public int getItemCount() {
-        return orders.size();
+        return orders == null ? 0 : orders.size();
     }
 
-    public static class OrderViewHolder extends RecyclerView.ViewHolder {
-
-        TextView orderIdText, flowerNameText, quantityText;
+    static class OrderViewHolder extends RecyclerView.ViewHolder {
+        TextView orderDate;
+        TextView flowersList;
+        TextView orderTotal;
 
         public OrderViewHolder(View itemView) {
             super(itemView);
-            orderIdText = itemView.findViewById(R.id.orderIdText);
-            flowerNameText = itemView.findViewById(R.id.flowerNameText);
-            quantityText = itemView.findViewById(R.id.quantityText);
+            orderDate = itemView.findViewById(R.id.textOrderDate);
+            flowersList = itemView.findViewById(R.id.textFlowersList);
+            orderTotal = itemView.findViewById(R.id.textOrderTotal);
         }
     }
 }

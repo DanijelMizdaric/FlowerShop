@@ -3,8 +3,6 @@ package com.example.flowershop;
 import android.os.Bundle;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     EditText usernameInput, passwordInput;
-    Button loginButton, registerButton;
+    Button loginButton, registerButton, changePass;
 
     private UserDAO userDao;
 
@@ -27,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
         usernameInput = findViewById(R.id.usernameID);
         passwordInput = findViewById(R.id.passwordID);
-        loginButton = findViewById(R.id.button);
-        registerButton = findViewById(R.id.button2);
-
+        loginButton = findViewById(R.id.changeID);
+        registerButton = findViewById(R.id.BackID);
+        changePass = findViewById(R.id.changePassID);
         loginButton.setOnClickListener(v -> {
             String inputUsername = usernameInput.getText().toString().trim();
             String inputPassword = passwordInput.getText().toString().trim();
@@ -61,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
 
         registerButton.setOnClickListener(v -> {
             Intent intent = new Intent (MainActivity.this, Register.class);
+            startActivity(intent);
+            finish();
+        });
+
+        changePass.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this, ChangePassword.class);
             startActivity(intent);
             finish();
         });

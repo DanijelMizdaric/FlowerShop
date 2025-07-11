@@ -33,8 +33,6 @@
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Back Button -->
-
     <!-- Search Bar -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/searchBarLayout"
@@ -62,25 +60,29 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="32dp"
-        android:paddingStart="32dp"
-        android:paddingEnd="32dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         app:layout_constraintTop_toBottomOf="@id/searchBarLayout"
         app:layout_constraintBottom_toTopOf="@id/navigationButtons"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
+        <GridLayout
             android:id="@+id/flowersContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:columnCount="2"
+            android:rowOrderPreserved="false"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
 
             <!-- Flower Item 1 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/flowerItem1"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -93,27 +95,53 @@
                     <ImageView
                         android:id="@+id/flowerImage1"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="120dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/rose" />
 
-                    <TextView
-                        android:id="@+id/flowerName1"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Rose"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="8dp" />
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
 
-                    <TextView
-                        android:id="@+id/flowerPrice1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$12.99"
-                        android:textColor="#777"
-                        android:textSize="16sp" />
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
+                            <TextView
+                                android:id="@+id/flowerName1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rose"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$12.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -123,7 +151,7 @@
 
                         <Button
                             android:id="@+id/minusButton1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="74dp"
                             android:layout_height="wrap_content"
                             android:text="−" />
 
@@ -134,6 +162,7 @@
                             android:text="+" />
                     </LinearLayout>
 
+                    <!-- Add to Cart Button -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/addToCartButton1"
                         android:layout_width="wrap_content"
@@ -147,9 +176,10 @@
             <!-- Flower Item 2 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/flowerItem2"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -162,9 +192,23 @@
                     <ImageView
                         android:id="@+id/flowerImage2"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="120dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/lily" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                <!-- Name and Price Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/flowerName2"
@@ -182,6 +226,15 @@
                         android:text="$9.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
+                </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/infoButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/info"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -192,7 +245,7 @@
 
                         <Button
                             android:id="@+id/minusButton2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="74dp"
                             android:layout_height="wrap_content"
                             android:text="−" />
 
@@ -216,9 +269,10 @@
             <!-- Flower Item 3 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/flowerItem3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -231,9 +285,22 @@
                     <ImageView
                         android:id="@+id/flowerImage3"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="120dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/tulip" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                <!-- Name and Price Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/flowerName3"
@@ -251,6 +318,15 @@
                         android:text="$14.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
+                </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/infoButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/info"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -261,7 +337,7 @@
 
                         <Button
                             android:id="@+id/minusButton3"
-                            android:layout_width="wrap_content"
+                            android:layout_width="74dp"
                             android:layout_height="wrap_content"
                             android:text="−" />
 
@@ -282,11 +358,13 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Flower Item 4 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/flowerItem4"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -299,10 +377,22 @@
                     <ImageView
                         android:id="@+id/flowerImage4"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="120dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/daisy" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
 
+                <!-- Name and Price Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
                     <TextView
                         android:id="@+id/flowerName4"
                         android:layout_width="wrap_content"
@@ -319,7 +409,15 @@
                         android:text="$14.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
+                </LinearLayout>
 
+                    <ImageButton
+                        android:id="@+id/infoButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/info"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -329,7 +427,7 @@
 
                         <Button
                             android:id="@+id/minusButton4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="74dp"
                             android:layout_height="wrap_content"
                             android:text="−" />
 
@@ -350,11 +448,13 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Flower Item 5 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/flowerItem5"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -367,10 +467,22 @@
                     <ImageView
                         android:id="@+id/flowerImage5"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="120dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/iris" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
 
+                <!-- Name and Price Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
                     <TextView
                         android:id="@+id/flowerName5"
                         android:layout_width="wrap_content"
@@ -387,7 +499,15 @@
                         android:text="$14.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
+                </LinearLayout>
 
+                    <ImageButton
+                        android:id="@+id/infoButton5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/info"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -397,7 +517,7 @@
 
                         <Button
                             android:id="@+id/minusButton5"
-                            android:layout_width="wrap_content"
+                            android:layout_width="74dp"
                             android:layout_height="wrap_content"
                             android:text="−" />
 
@@ -418,11 +538,13 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Flower Item 6 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/flowerItem6"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -435,10 +557,22 @@
                     <ImageView
                         android:id="@+id/flowerImage6"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="120dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/peony" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
 
+                <!-- Name and Price Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
                     <TextView
                         android:id="@+id/flowerName6"
                         android:layout_width="wrap_content"
@@ -455,6 +589,15 @@
                         android:text="$14.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
+                </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/infoButton6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/info"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -465,7 +608,7 @@
 
                         <Button
                             android:id="@+id/minusButton6"
-                            android:layout_width="wrap_content"
+                            android:layout_width="74dp"
                             android:layout_height="wrap_content"
                             android:text="−" />
 
@@ -486,7 +629,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-        </LinearLayout>
+        </GridLayout>
     </ScrollView>
 
     <!-- Navigation Buttons -->
