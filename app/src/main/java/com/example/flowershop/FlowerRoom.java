@@ -27,7 +27,7 @@ public class FlowerRoom {
         this.orderID = orderID;
     }
 
-    // Getters and Setters
+
     public int getId() {
         return id;
     }
