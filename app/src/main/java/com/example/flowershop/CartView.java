@@ -19,8 +19,8 @@ import java.util.Locale;
 public class CartView extends AppCompatActivity {
 
     private ListView cartListView;
-    private Button checkoutButton;
-    private Button backbtn;
+    private Button checkoutButton, backbtn;
+
     private ArrayAdapter<String> adapter;
     private List<FlowerRoom> flowerList = new ArrayList<>();
     private List<String> displayList = new ArrayList<>();
@@ -32,17 +32,16 @@ public class CartView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_view);
-        FlowerDAO flowerDao = FlowerDB.getDatabase(this).flowerDao();
-        OrderDAO orderDao = FlowerDB.getDatabase(this).orderDao();
 
         cartManager = new CartManager(this);
-
+        String Username = getIntent().getStringExtra("username");
         cartListView = findViewById(R.id.cartViewID);
         checkoutButton = findViewById(R.id.checkoutBtnID);
         backbtn = findViewById(R.id.backBtn);
         String username = getIntent().getStringExtra("username");
         backbtn.setOnClickListener(v -> {
             Intent intent = new Intent(CartView.this, HomeScreen.class);
+            intent.putExtra("username", Username);
             startActivity(intent);
             finish();
         });
@@ -71,11 +70,9 @@ public class CartView extends AppCompatActivity {
         });
 
         // Remove item on long click
-        cartListView.setOnItemLongClickListener((parent, view, position, id) -> {
-            FlowerRoom flower = flowerList.get(position);
-            cartManager.removeFromCart(flower);
-            Toast.makeText(this, flower.getName() + " removed from cart", Toast.LENGTH_SHORT).show();
-            return true;
+        cartManager.getCartFlowers().observe(this, flowers -> {
+            CartAdapter adapter = new CartAdapter(this, flowers, cartManager);
+            cartListView.setAdapter(adapter);
         });
 
         checkoutButton.setOnClickListener(v -> {
@@ -92,8 +89,5 @@ public class CartView extends AppCompatActivity {
             }
         });
 
-    }
-    private int generateNewOrderID() {
-        return (int) (System.currentTimeMillis() % Integer.MAX_VALUE);
     }
 }

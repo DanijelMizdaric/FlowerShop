@@ -41,9 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
                 runOnUiThread(() -> {
                     if (userData != null && userData.password.equals(inputPassword)) {
-
                         Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, HomeScreen.class);
+                        Intent intent = new Intent(MainActivity.this, HomePage.class);
                         intent.putExtra("username",userData.username);
                         startActivity(intent);
                         finish();
@@ -68,5 +67,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
+
     }
 }
