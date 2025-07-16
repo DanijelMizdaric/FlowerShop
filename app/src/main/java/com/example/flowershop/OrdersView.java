@@ -41,10 +41,17 @@ public class OrdersView extends AppCompatActivity {
         // Get database instance
         db = FlowerDB.getDatabase(getApplicationContext());
         String username = getIntent().getStringExtra("username");
+        String caller = getIntent().getStringExtra("caller");
 
         // Back button click handler
         backBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(OrdersView.this, HomeScreen.class);
+            Intent intent;
+            if ("HomeScreen".equals(caller)) {
+                intent = new Intent(OrdersView.this, HomeScreen.class);
+            } else {
+                intent = new Intent(OrdersView.this, HomePage.class);
+            }
+
             intent.putExtra("username", username);
             startActivity(intent);
             finish();

@@ -34,7 +34,7 @@ public class HomeScreen extends AppCompatActivity {
     EditText searchBar;
     ScrollView scrollview;
     int a=1;
-    CartManager cartManager; // Declare CartManager
+    CartManager cartManager;
     private FlowerDAO flowerDao;
     private Map<String, Integer> flowerMap = new HashMap<>();
     private Map<String, String> flowerNameMap = new HashMap<>();
@@ -44,7 +44,7 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         flowerDao= FlowerDB.getDatabase(this).flowerDao();
-        // Initialize the CartManager with the current context
+
         cartManager = new CartManager(this);
 
         backbtn = findViewById(R.id.backBtnID);
@@ -100,7 +100,7 @@ public class HomeScreen extends AppCompatActivity {
                 if (flowerDao.getFlowerCount() == 0) {
                     InitializeDatabase.populateDatabase(flowerDao);
 
-                    // Switch to UI thread to update SharedPreferences
+
                     runOnUiThread(() -> {
                         prefs.edit().putBoolean("db_initialized", true).apply();
                     });
@@ -108,9 +108,10 @@ public class HomeScreen extends AppCompatActivity {
             }).start();
         }
 
-        // Navigate to MainActivity when back button is clicked
+
         backbtn.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeScreen.this, MainActivity.class);
+            Intent intent = new Intent(HomeScreen.this, HomePage.class);
+            intent.putExtra("username", Username);
             startActivity(intent);
             finish();
         });
@@ -358,8 +359,9 @@ public class HomeScreen extends AppCompatActivity {
         goOrders.setOnClickListener(v->{
             Intent intent = new Intent(HomeScreen.this, OrdersView.class);
             intent.putExtra("username", Username);
+            intent.putExtra("caller", "HomeScreen");
             startActivity(intent);
-            finish();
+
         });
     }
     public void addQuantity(){
