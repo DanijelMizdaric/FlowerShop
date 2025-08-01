@@ -42,7 +42,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
     CartManager cartManager;
     private FlowerDAO flowerDao;
     private Map<String, Integer> flowerMap = new HashMap<>();
-    private Map<String, String> flowerNameMap = new HashMap<>();
+
     @SuppressLint({"MissingInflatedId", "CutPasteId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,7 +144,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
         flowerMap.put("daisy", R.id.flowerItem4);
         flowerMap.put("iris", R.id.flowerItem5);
         flowerMap.put("peony", R.id.flowerItem6);
-        flowerMap.put("forget_me_not", R.id.flowerItem7);
+        flowerMap.put("forget me not", R.id.flowerItem7);
         flowerMap.put("orchid", R.id.flowerItem8);
         flowerMap.put("magnolia", R.id.flowerItem9);
         flowerMap.put("bluebell", R.id.flowerItem10);
@@ -159,26 +159,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
         flowerMap.put("phlox", R.id.flowerItem19);
         flowerMap.put("poppy", R.id.flowerItem20);
 
-        flowerNameMap.put("rose", "Rose");
-        flowerNameMap.put("lily", "Lily");
-        flowerNameMap.put("tulip", "Tulip");
-        flowerNameMap.put("daisy", "Daisy");
-        flowerNameMap.put("iris", "Iris");
-        flowerNameMap.put("peony", "Peony");
-        flowerNameMap.put("forget_me_not","Forget me not");
-        flowerNameMap.put("orchid","Orchid");
-        flowerNameMap.put("magnolia","Magnolia");
-        flowerNameMap.put("bluebell","Bluebell");
-        flowerNameMap.put("amaryllis","Amaryllis");
-        flowerNameMap.put("camellia","Camellia");
-        flowerNameMap.put("dahlia","Dahlia");
-        flowerNameMap.put("zinnia","Zinnia");
-        flowerNameMap.put("aster","Aster");
-        flowerNameMap.put("gladiolus","Gladiolus");
-        flowerNameMap.put("marigold","Marigold");
-        flowerNameMap.put("freesia","Freesia");
-        flowerNameMap.put("phlox","Phlox");
-        flowerNameMap.put("poppy","Poppy");
 
         String Username = getIntent().getStringExtra("username");
 
@@ -204,7 +184,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
 
                     cardView.setCardBackgroundColor(Color.YELLOW);
                     new Handler().postDelayed(() -> {
-                        cardView.setCardBackgroundColor(Color.WHITE);
+                        cardView.setCardBackgroundColor(getResources().getColor(R.color.primary_container));
                     }, 2000);
                 });
 

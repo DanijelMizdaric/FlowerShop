@@ -44,7 +44,7 @@ public class HomeScreen extends AppCompatActivity {
     CartManager cartManager;
     private FlowerDAO flowerDao;
     private Map<String, Integer> flowerMap = new HashMap<>();
-    private Map<String, String> flowerNameMap = new HashMap<>();
+
     @SuppressLint({"MissingInflatedId", "CutPasteId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,26 +161,6 @@ public class HomeScreen extends AppCompatActivity {
         flowerMap.put("phlox", R.id.flowerItem19);
         flowerMap.put("poppy", R.id.flowerItem20);
 
-        flowerNameMap.put("rose", "Rose");
-        flowerNameMap.put("lily", "Lily");
-        flowerNameMap.put("tulip", "Tulip");
-        flowerNameMap.put("daisy", "Daisy");
-        flowerNameMap.put("iris", "Iris");
-        flowerNameMap.put("peony", "Peony");
-        flowerNameMap.put("forget_me_not","Forget me not");
-        flowerNameMap.put("orchid","Orchid");
-        flowerNameMap.put("magnolia","Magnolia");
-        flowerNameMap.put("bluebell","Bluebell");
-        flowerNameMap.put("amaryllis","Amaryllis");
-        flowerNameMap.put("camellia","Camellia");
-        flowerNameMap.put("dahlia","Dahlia");
-        flowerNameMap.put("zinnia","Zinnia");
-        flowerNameMap.put("aster","Aster");
-        flowerNameMap.put("gladiolus","Gladiolus");
-        flowerNameMap.put("marigold","Marigold");
-        flowerNameMap.put("freesia","Freesia");
-        flowerNameMap.put("phlox","Phlox");
-        flowerNameMap.put("poppy","Poppy");
 
         String Username = getIntent().getStringExtra("username");
 
