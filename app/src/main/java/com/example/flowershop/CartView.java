@@ -19,7 +19,7 @@ import java.util.Locale;
 public class CartView extends AppCompatActivity {
 
     private ListView cartListView;
-    private Button checkoutButton, backbtn;
+    private Button backbtn;
 
     private ArrayAdapter<String> adapter;
     private List<FlowerRoom> flowerList = new ArrayList<>();
@@ -36,7 +36,6 @@ public class CartView extends AppCompatActivity {
         cartManager = new CartManager(this);
         String Username = getIntent().getStringExtra("username");
         cartListView = findViewById(R.id.cartViewID);
-        checkoutButton = findViewById(R.id.checkoutBtnID);
         backbtn = findViewById(R.id.backBtn);
         String username = getIntent().getStringExtra("username");
         backbtn.setOnClickListener(v -> {
@@ -74,20 +73,7 @@ public class CartView extends AppCompatActivity {
             CartAdapter adapter = new CartAdapter(this, flowers, cartManager);
             cartListView.setAdapter(adapter);
         });
-
-        checkoutButton.setOnClickListener(v -> {
-            List<FlowerRoom> cartItems = cartManager.getCartFlowers().getValue();
-            if (cartItems != null && !cartItems.isEmpty()) {
-                cartManager.checkoutAllFlowers(cartItems);
-                Intent intent = new Intent(CartView.this, HomeScreen.class);
-                intent.putExtra("username", username);
-                startActivity(intent);
-                finish();
-                Toast.makeText(this, "Purchase completed!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Cart is empty!", Toast.LENGTH_SHORT).show();
-            }
-        });
+        
 
     }
 }

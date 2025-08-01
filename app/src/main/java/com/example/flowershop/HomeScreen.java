@@ -146,7 +146,7 @@ public class HomeScreen extends AppCompatActivity {
         flowerMap.put("daisy", R.id.flowerItem4);
         flowerMap.put("iris", R.id.flowerItem5);
         flowerMap.put("peony", R.id.flowerItem6);
-        flowerMap.put("forget_me_not", R.id.flowerItem7);
+        flowerMap.put("forget me not", R.id.flowerItem7);
         flowerMap.put("orchid", R.id.flowerItem8);
         flowerMap.put("magnolia", R.id.flowerItem9);
         flowerMap.put("bluebell", R.id.flowerItem10);
@@ -216,7 +216,7 @@ public class HomeScreen extends AppCompatActivity {
 
                     cardView.setCardBackgroundColor(Color.YELLOW);
                     new Handler().postDelayed(() -> {
-                        cardView.setCardBackgroundColor(Color.WHITE);
+                        cardView.setCardBackgroundColor(getResources().getColor(R.color.primary_container));
                     }, 2000);
                 });
 

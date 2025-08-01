@@ -23,6 +23,7 @@ import java.util.concurrent.Executors;
 
 public class CheckOut extends AppCompatActivity {
 
+    private String selectedItem= null;
     String[] item = {"Deliver", "Pick up in Store"};
     MaterialAutoCompleteTextView autoCompleteTextView;
     TextInputLayout dropdownLayout, textInputLayout1, textInputLayout2, textInputLayout3;
@@ -77,13 +78,14 @@ public class CheckOut extends AppCompatActivity {
         autoCompleteTextView.setOnClickListener(v -> autoCompleteTextView.showDropDown());
 
         autoCompleteTextView.setOnItemClickListener((parent, view, position, id) -> {
-            String selectedItem = (String) parent.getItemAtPosition(position);
+            selectedItem = (String) parent.getItemAtPosition(position);
             setVisibility("Deliver".equals(selectedItem));
             if (!"Deliver".equals(selectedItem)) {
                 editText1.setText("");
                 editText2.setText("");
                 editText3.setText("");
             }
+
         });
 
 
@@ -105,6 +107,13 @@ public class CheckOut extends AppCompatActivity {
             finish();
         });
         btn2.setOnClickListener(v -> {
+            if (selectedItem == null || selectedItem.trim().isEmpty()){
+                Toast.makeText(CheckOut.this, "Please select a delivery option.", Toast.LENGTH_SHORT).show();
+                return;
+            } else if ("Deliver".equals(selectedItem) && (isItEmpty(editText1) ||isItEmpty(editText2) || isItEmpty(editText3))){
+                Toast.makeText(CheckOut.this, "All fields must be filled.", Toast.LENGTH_SHORT ).show();
+                return;
+            } else
             executor.execute(() -> {
                 List<FlowerRoom> cartItems = flowerDao.getAllFlowers(); // or cartManager.getCartFlowers().getValue()
 
@@ -228,5 +237,8 @@ public class CheckOut extends AppCompatActivity {
         }).start();
     }
 
-
+    private boolean isItEmpty(TextInputEditText editText){
+        return editText.getText() == null || editText.getText().toString().trim().isEmpty();
+    }
 }
+
