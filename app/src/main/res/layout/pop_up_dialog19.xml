@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/flowerImage"
+        android:layout_width="396dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/phlox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        tools:layout_editor_absoluteX="7dp" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/x"
+        app:layout_constraintBottom_toTopOf="@+id/flowerImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/RoseInfoID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Phlox"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/RoseTextID"
+        android:layout_width="373dp"
+        android:layout_height="290dp"
+        android:text="Phlox are perennial or annual flowering plants of the genus Phlox in the family Polemoniaceae, with about 70 species native mainly to North America. They are valued for their clusters of small, star-shaped flowers that bloom in a wide range of colors including white, pink, red, purple, and blue. Phlox thrive in sunny locations with well-drained soil, blooming from spring through late summer depending on the species. The leaves are generally opposite, simple, and vary in shape from lanceolate to ovate, usually smooth-edged and growing along slender stems.  Flower clusters, called cymes or panicles, produce numerous fragrant blooms that attract butterflies and hummingbirds. Phlox species range from low-growing ground covers to tall, upright plants reaching up to 1 meter. They symbolize harmony, sweet dreams, and unity, making them popular in gardens and floral arrangements."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.283" />
+</androidx.constraintlayout.widget.ConstraintLayout>

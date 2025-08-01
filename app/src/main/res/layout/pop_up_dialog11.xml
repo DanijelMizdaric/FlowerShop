@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/flowerImage"
+        android:layout_width="396dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/amaryllis"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        tools:layout_editor_absoluteX="7dp" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/x"
+        app:layout_constraintBottom_toTopOf="@+id/flowerImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/RoseInfoID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Amaryllis"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/RoseTextID"
+        android:layout_width="371dp"
+        android:layout_height="308dp"
+        android:text="Amaryllis is a bulbous flowering plant of the genus Hippeastrum, commonly referred to by the name Amaryllis in cultivation, though true Amaryllis species belong to a small South African genus. They are best known for their large, trumpet-shaped flowers that bloom atop tall, leafless stalks, often in shades of red, pink, white, or striped combinations. Native to South America, particularly the Andes and tropical regions, amaryllis is widely grown indoors during winter in temperate climates. The strap-shaped leaves appear after flowering and grow in a basal rosette, reaching lengths of up to 60 cm.  Each stalk typically bears 2 to 6 flowers, with six broad tepals arranged symmetrically around a central column of stamens and a long style. The flowers last for several weeks and are prized for their bold appearance and ease of forcing into bloom indoors. Amaryllis symbolizes pride, beauty, and determination, often gifted during holidays and used as a striking seasonal decoration."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.283" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Iris"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
@@ -44,9 +45,9 @@
 
     <TextView
         android:id="@+id/RoseTextID"
-        android:layout_width="396dp"
-        android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur dictum mi, et interdum elit consectetur id. Quisque eget mattis dolor, at luctus velit. Cras et sem gravida nisl sagittis vehicula. Aenean aliquet, purus vulputate elementum mattis, elit erat maximus erat, convallis rutrum nulla justo id enim. Etiam congue consequat rutrum. Sed vel laoreet est, non pharetra tellus. Aliquam placerat, erat nec ullamcorper placerat, augue enim sagittis diam, eu tincidunt est tellus quis elit. Nam at dapibus velit. Sed erat sem, tempus ac feugiat id, porta sed lorem. Nulla dolor lectus, volutpat vitae commodo consequat, sollicitudin ut libero. Ut sagittis pellentesque viverra. Nulla pellentesque egestas mauris, ut placerat turpis hendrerit nec. Sed ut dolor nibh.  Suspendisse potenti. Maecenas sed tempor est. Phasellus iaculis commodo eros, in lacinia nisi placerat vitae. Quisque id libero velit. Proin ut quam ornare, dapibus libero ac, ultrices turpis. Maecenas consectetur laoreet dui a consectetur. Vivamus a urna lacinia, scelerisque orci sit amet, ornare leo. Maecenas sodales diam quam, in congue risus consequat eget."
+        android:layout_width="372dp"
+        android:layout_height="357dp"
+        android:text="Irises are perennial flowering plants of the genus Iris in the family Iridaceae, comprising over 300 species with a wide variety of colors and forms. They are known for their distinctive, showy flowers, which typically have three upright petals (standards) and three downward sepals (falls), often marked with contrasting colors or intricate patterns. Native to temperate regions of the Northern Hemisphere, irises are commonly found in Europe, Asia, and North America, thriving in a range of habitats from meadows to wetlands. The leaves are usually narrow, sword-shaped, and grow in a fan-like arrangement from the base, ranging from 30 to 90 cm in length.  Irises grow from either rhizomes or bulbs, depending on the species, and produce tall, erect flowering stalks that may bear one or multiple blooms. The flowers are often blue, purple, white, yellow, or bi-colored, and many species are cultivated for ornamental use in gardens and floral arrangements. Irises symbolize wisdom, courage, and hope, and are notable in art and culture, particularly in ancient Greek mythology and French heraldry."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"

@@ -1,5 +1,6 @@
 package com.example.flowershop;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 @Entity(tableName = "order_flower")
@@ -8,11 +9,17 @@ public class OrderFlower {
         @PrimaryKey(autoGenerate = true)
         private int id;
 
+        @ColumnInfo(name = "orderID")
         private int orderID;
+        @ColumnInfo(name = "name")
         private String name;
+        @ColumnInfo(name = "quantity")
         private int quantity;
+        @ColumnInfo(name = "username")
         private String username;
+        @ColumnInfo(name = "price")
         private double price;
+
 
         // Getters and setters for all fields
 
@@ -57,4 +64,5 @@ public class OrderFlower {
         public void setPrice(double price) {
                 this.price = price;
         }
+
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/flowerImage"
+        android:layout_width="396dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/orchid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        tools:layout_editor_absoluteX="7dp" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/x"
+        app:layout_constraintBottom_toTopOf="@+id/flowerImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/RoseInfoID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Orchid"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/RoseTextID"
+        android:layout_width="373dp"
+        android:layout_height="357dp"
+        android:text="Orchids are flowering plants of the family Orchidaceae, one of the largest and most diverse plant families, with over 25,000 species and more than 100,000 hybrids. They are known for their complex, often fragrant flowers that come in a wide range of colors, shapes, and sizes, frequently adapted to attract specific pollinators. Orchids are found on every continent except Antarctica, with the greatest diversity in tropical regions of Asia, Central and South America. Their leaves are usually thick, leathery, and arranged alternately, often varying greatly in size and shape depending on the species.  Orchid flowers typically have three sepals and three petals, with one petal modified into a distinctive lip or labellum, often serving as a landing platform for pollinators. Most orchids grow as epiphytes, attaching to trees without drawing nutrients from them, while others are terrestrial or lithophytic. They bloom at various times depending on species, with some producing long-lasting flowers that can remain open for weeks. Orchids symbolize beauty, refinement, and love, and are widely cultivated for decorative purposes, particularly species like Phalaenopsis, Cattleya, and Dendrobium."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.283" />
+</androidx.constraintlayout.widget.ConstraintLayout>

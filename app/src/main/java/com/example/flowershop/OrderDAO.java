@@ -25,5 +25,9 @@ public interface OrderDAO {
     @Query("SELECT * FROM orders WHERE username = :username")
     List<OrderWithFlowers> getOrdersWithFlowers(String username);
 
+    @Query("SELECT * FROM orders ORDER BY id DESC LIMIT 1")
+    OrderRoom getLastOrder();
+
+
     // (Other methods omitted for brevity)
 }

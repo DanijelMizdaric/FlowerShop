@@ -6,11 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class HomePage extends AppCompatActivity {
 
@@ -27,7 +23,7 @@ public class HomePage extends AppCompatActivity {
         btn2 = findViewById(R.id.checkOrderID);
         btn3 = findViewById(R.id.FactID);
         backBtn = findViewById(R.id.goBackbtn);
-        textView = findViewById(R.id.loginTitle2);
+        textView = findViewById(R.id.totalID);
         String Username = getIntent().getStringExtra("username");
         textView.setText("Welcome back, " + Username + "!");
 
@@ -39,7 +35,7 @@ public class HomePage extends AppCompatActivity {
         });
 
         btn1.setOnClickListener(v->{
-            Intent intent = new Intent(HomePage.this, HomeScreen.class);
+            Intent intent = new Intent(HomePage.this, ShopType.class);
             intent.putExtra("username",Username);
             startActivity(intent);
             finish();
@@ -49,6 +45,11 @@ public class HomePage extends AppCompatActivity {
             intent.putExtra("username",Username);
             startActivity(intent);
 
+        });
+        btn3.setOnClickListener(v->{
+            Intent intent = new Intent(HomePage.this, FunFactFlower.class);
+            intent.putExtra("username",Username);
+            startActivity(intent);
         });
     }
 }

@@ -40,7 +40,7 @@ public class CartView extends AppCompatActivity {
         backbtn = findViewById(R.id.backBtn);
         String username = getIntent().getStringExtra("username");
         backbtn.setOnClickListener(v -> {
-            Intent intent = new Intent(CartView.this, HomeScreen.class);
+            Intent intent = new Intent(CartView.this, CheckOut.class);
             intent.putExtra("username", Username);
             startActivity(intent);
             finish();
@@ -49,7 +49,7 @@ public class CartView extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, displayList);
         cartListView.setAdapter(adapter);
 
-        // Observe cart items from CartManager
+
         cartManager.getCartFlowers().observe(this, new Observer<List<FlowerRoom>>() {
             @Override
             public void onChanged(List<FlowerRoom> flowers) {
@@ -69,7 +69,7 @@ public class CartView extends AppCompatActivity {
             }
         });
 
-        // Remove item on long click
+
         cartManager.getCartFlowers().observe(this, flowers -> {
             CartAdapter adapter = new CartAdapter(this, flowers, cartManager);
             cartListView.setAdapter(adapter);
@@ -78,7 +78,7 @@ public class CartView extends AppCompatActivity {
         checkoutButton.setOnClickListener(v -> {
             List<FlowerRoom> cartItems = cartManager.getCartFlowers().getValue();
             if (cartItems != null && !cartItems.isEmpty()) {
-                cartManager.checkoutAllFlowers(cartItems); // <- now this method is actually used
+                cartManager.checkoutAllFlowers(cartItems);
                 Intent intent = new Intent(CartView.this, HomeScreen.class);
                 intent.putExtra("username", username);
                 startActivity(intent);

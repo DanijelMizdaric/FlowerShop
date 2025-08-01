@@ -65,7 +65,7 @@ public class CartManager {
             String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
             // Insert a new OrderRoom with placeholder totals
-            OrderRoom order = new OrderRoom(0, "Summary", 0, 0.0, flowers.get(0).getUsername(), currentDate);
+            OrderRoom order = new OrderRoom(flowers.get(0).getUsername(), currentDate, "Pick up in Store",0,0);
             long insertedOrderId = orderDao.insertOrder(order);
             // Room returns the new primary key (id) for the inserted order:contentReference[oaicite:3]{index=3}
 
@@ -90,8 +90,6 @@ public class CartManager {
 
             // Update the OrderRoom row with correct total quantity and price
             order.id = (int) insertedOrderId;
-            order.quantity = totalQuantity;
-            order.price = totalPrice;
             orderDao.update(order);  // This requires @Update in OrderDAO:contentReference[oaicite:4]{index=4}
 
             loadCartFlowers();  // refresh cart (should now be empty)

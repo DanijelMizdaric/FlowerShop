@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/flowerImage"
+        android:layout_width="396dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/camellias"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        tools:layout_editor_absoluteX="7dp" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/x"
+        app:layout_constraintBottom_toTopOf="@+id/flowerImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/RoseInfoID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Camellia"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/RoseTextID"
+        android:layout_width="373dp"
+        android:layout_height="290dp"
+        android:text="Camellias are evergreen shrubs or small trees in the genus Camellia, part of the family Theaceae, with over 200 known species. They are admired for their glossy, dark green leaves and rose-like flowers, which bloom in shades of white, pink, red, and sometimes yellow. Native to eastern and southern Asia, especially China, Japan, and Korea, camellias thrive in mild, humid climates with acidic soil. Leaves are simple, alternately arranged, and have finely serrated edges, usually 5 to 10 cm long.  Flowers range from single to fully double forms, with numerous overlapping petals and a cluster of yellow stamens in the center. Blooming from late fall to early spring, they are often grown ornamentally or as part of traditional gardens. The species Camellia sinensis is also the source of tea leaves. Camellias symbolize admiration, perfection, and longevity, and are especially significant in East Asian art and culture."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.283" />
+</androidx.constraintlayout.widget.ConstraintLayout>

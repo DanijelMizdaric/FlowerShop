@@ -46,12 +46,25 @@ public class OrdersView extends AppCompatActivity {
         // Back button click handler
         backBtn.setOnClickListener(v -> {
             Intent intent;
-            if ("HomeScreen".equals(caller)) {
+            switch (caller){
+                case "HomeScreen":
+                    Log.d("DEBUG","Current caller: " + caller);
+                    intent = new Intent(OrdersView.this, HomeScreen.class);
+                    break;
+                case "BuyBouquetScreen":
+                    Log.d("DEBUG","Current caller: " + caller);
+                    intent = new Intent(OrdersView.this, BuyBouquetScreen.class);
+                    break;
+                default:
+                   intent = new Intent(OrdersView.this, HomePage.class);
+            }
+
+         /*   if ("HomeScreen".equals(caller)) {
                 intent = new Intent(OrdersView.this, HomeScreen.class);
             } else {
                 intent = new Intent(OrdersView.this, HomePage.class);
             }
-
+*/
             intent.putExtra("username", username);
             startActivity(intent);
             finish();

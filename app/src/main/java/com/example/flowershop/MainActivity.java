@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         usernameInput = findViewById(R.id.usernameID);
         passwordInput = findViewById(R.id.passwordID);
         loginButton = findViewById(R.id.changeID);
-        registerButton = findViewById(R.id.BackID);
+        registerButton = findViewById(R.id.goBackID);
         changePass = findViewById(R.id.changePassID);
         loginButton.setOnClickListener(v -> {
             String inputUsername = usernameInput.getText().toString().trim();

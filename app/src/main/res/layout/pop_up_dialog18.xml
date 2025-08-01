@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/flowerImage"
+        android:layout_width="396dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/freesia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        tools:layout_editor_absoluteX="7dp" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/x"
+        app:layout_constraintBottom_toTopOf="@+id/flowerImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/RoseInfoID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Freesia"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/RoseTextID"
+        android:layout_width="373dp"
+        android:layout_height="290dp"
+        android:text="Freesias are fragrant, bulbous perennial plants of the genus Freesia in the family Iridaceae, consisting of about 15 species native to southern Africa. They are well known for their delicate, trumpet-shaped flowers that bloom in a wide range of colors, including white, yellow, pink, red, purple, and bi-colored varieties. Freesias grow from corms and prefer well-drained soil with plenty of sunlight, thriving best in mild climates and flowering mainly in spring or early summer. The leaves are narrow, sword-shaped, and arranged upright in a fan-like pattern, typically reaching 15 to 40 cm in length.  Their flowers grow on slender, arching stems, with several blossoms opening one after another from the base toward the tip, creating a graceful cascading effect. Freesias are highly prized for their sweet, citrus-like fragrance, making them a popular choice for bouquets and perfumery. They symbolize innocence, friendship, and trust, often gifted to express thoughtfulness and affection."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowerImage"
+        app:layout_constraintVertical_bias="0.283" />
+</androidx.constraintlayout.widget.ConstraintLayout>

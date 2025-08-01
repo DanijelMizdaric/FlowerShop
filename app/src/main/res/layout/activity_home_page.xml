@@ -8,7 +8,7 @@
     tools:context=".HomePage">
 
     <TextView
-        android:id="@+id/loginTitle2"
+        android:id="@+id/totalID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
