@@ -36,13 +36,13 @@
         android:id="@+id/loginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome Back"
+        android:layout_marginTop="32dp"
+        android:text="Welcome!"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/topAppBar"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameLayout"
@@ -97,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@id/passwordLayout" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/BackID"
+        android:id="@+id/goBackID"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -113,8 +113,8 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/changePassID"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="192dp"
-        android:layout_height="45dp"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="4dp"
         android:fontFamily="sans-serif"
         android:text="Forgot Password?"

@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="darker_gray">#FF444444</color>
+
+    <color name="primary">#FF7F50</color>  <!-- Coral -->
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#FFE9E0</color>
+    <color name="on_primary_container">#2A150D</color>
 </resources>

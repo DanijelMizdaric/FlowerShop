@@ -22,7 +22,7 @@ public class ChangePassword extends AppCompatActivity {
         userDAO = FlowerDB.getDatabase(getApplicationContext()).userDAO();
         setContentView(R.layout.activity_change_password);
 
-        backBtn= findViewById(R.id.BackID);
+        backBtn= findViewById(R.id.goBackID);
         confirmBtn = findViewById(R.id.changeID);
 
         backBtn.setOnClickListener(v->{
@@ -53,8 +53,6 @@ public class ChangePassword extends AppCompatActivity {
                     runOnUiThread(()->{
                         Toast.makeText(this,"Invalid username or email", Toast.LENGTH_SHORT).show();
                     });
-
-
                 } else {
                     user.password = inputPass;
                     userDAO.update(user);

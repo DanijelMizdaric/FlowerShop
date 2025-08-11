@@ -50,25 +50,10 @@
         tools:ignore="MissingConstraints" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/checkoutBtnID"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Check out"
-        app:layout_constraintTop_toBottomOf="@id/topAppBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        style="@style/Widget.MaterialComponents.Button"/>
-
-
     <ListView
         android:id="@+id/cartViewID"
         android:layout_width="410dp"
         android:layout_height="514dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"
         android:padding="16dp"
@@ -76,7 +61,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkoutBtnID"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/topAppBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

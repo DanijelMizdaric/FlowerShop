@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Daisy"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
@@ -44,9 +45,9 @@
 
     <TextView
         android:id="@+id/RoseTextID"
-        android:layout_width="396dp"
-        android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur dictum mi, et interdum elit consectetur id. Quisque eget mattis dolor, at luctus velit. Cras et sem gravida nisl sagittis vehicula. Aenean aliquet, purus vulputate elementum mattis, elit erat maximus erat, convallis rutrum nulla justo id enim. Etiam congue consequat rutrum. Sed vel laoreet est, non pharetra tellus. Aliquam placerat, erat nec ullamcorper placerat, augue enim sagittis diam, eu tincidunt est tellus quis elit. Nam at dapibus velit. Sed erat sem, tempus ac feugiat id, porta sed lorem. Nulla dolor lectus, volutpat vitae commodo consequat, sollicitudin ut libero. Ut sagittis pellentesque viverra. Nulla pellentesque egestas mauris, ut placerat turpis hendrerit nec. Sed ut dolor nibh.  Suspendisse potenti. Maecenas sed tempor est. Phasellus iaculis commodo eros, in lacinia nisi placerat vitae. Quisque id libero velit. Proin ut quam ornare, dapibus libero ac, ultrices turpis. Maecenas consectetur laoreet dui a consectetur. Vivamus a urna lacinia, scelerisque orci sit amet, ornare leo. Maecenas sodales diam quam, in congue risus consequat eget."
+        android:layout_width="373dp"
+        android:layout_height="290dp"
+        android:text="Daisies are herbaceous flowering plants belonging to the genus Bellis or Leucanthemum, most commonly Bellis perennis, in the family Asteraceae. They are known for their classic flower heads with a central yellow disc floret surrounded by white, pink, or purple ray florets, forming a simple yet iconic shape. Native to Europe and parts of western Asia, daisies have since become naturalized in many regions across North America and elsewhere. The leaves are typically spoon-shaped, forming a basal rosette, and range from 2 to 5 cm in length with slightly toothed edges.  Daisy flower heads are composite, meaning what appears to be a single flower is actually a cluster of many small flowers, or florets, grouped together. Each stem is generally leafless and grows upright, reaching about 10 to 25 cm in height depending on the species. Daisies bloom from early spring through late autumn and are widely appreciated for their hardiness and symbolism of innocence, purity, and new beginnings."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"

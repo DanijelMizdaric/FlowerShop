@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Rose"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
@@ -44,9 +45,9 @@
 
     <TextView
         android:id="@+id/RoseTextID"
-        android:layout_width="396dp"
-        android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur dictum mi, et interdum elit consectetur id. Quisque eget mattis dolor, at luctus velit. Cras et sem gravida nisl sagittis vehicula. Aenean aliquet, purus vulputate elementum mattis, elit erat maximus erat, convallis rutrum nulla justo id enim. Etiam congue consequat rutrum. Sed vel laoreet est, non pharetra tellus. Aliquam placerat, erat nec ullamcorper placerat, augue enim sagittis diam, eu tincidunt est tellus quis elit. Nam at dapibus velit. Sed erat sem, tempus ac feugiat id, porta sed lorem. Nulla dolor lectus, volutpat vitae commodo consequat, sollicitudin ut libero. Ut sagittis pellentesque viverra. Nulla pellentesque egestas mauris, ut placerat turpis hendrerit nec. Sed ut dolor nibh.  Suspendisse potenti. Maecenas sed tempor est. Phasellus iaculis commodo eros, in lacinia nisi placerat vitae. Quisque id libero velit. Proin ut quam ornare, dapibus libero ac, ultrices turpis. Maecenas consectetur laoreet dui a consectetur. Vivamus a urna lacinia, scelerisque orci sit amet, ornare leo. Maecenas sodales diam quam, in congue risus consequat eget."
+        android:layout_width="373dp"
+        android:layout_height="290dp"
+        android:text="Roses are perennial flowering plants of the genus Rosa in the family Rosaceae, with over 300 different types of species. Their stems are often armed with sharp prickles and their flowers vary in size and shape, which are usually large and showy with varying colors. Most species are native to Asia, with smaller numbers being native in Europe, NA, NW Africa. The leaves are borne alternately on the stem, in most species they are 5-15 cm long. Pinnate with 5-9 leaflets and basal stipules; the leaflets usually have a serated margin, and often a few small prickles on the underside of the stem.  The flowers of most species have 5 petals, with the exception of Rosa omeiensis and Rosa sericea, which usually only have four. Each petal is divided into two distinct lobes and is usually white or pink, though in a few species yellow or red."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"

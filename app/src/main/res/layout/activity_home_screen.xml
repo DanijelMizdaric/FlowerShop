@@ -125,7 +125,7 @@
                                 android:id="@+id/flowerPrice1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$12.99"
+                                android:text="$6.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -223,7 +223,7 @@
                         android:id="@+id/flowerPrice2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$9.99"
+                        android:text="$4.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -315,7 +315,7 @@
                         android:id="@+id/flowerPrice3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$14.99"
+                        android:text="$7.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -406,7 +406,7 @@
                         android:id="@+id/flowerPrice4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$14.99"
+                        android:text="$3.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -496,7 +496,7 @@
                         android:id="@+id/flowerPrice5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$14.99"
+                        android:text="$5.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -586,7 +586,7 @@
                         android:id="@+id/flowerPrice6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$14.99"
+                        android:text="$5.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -621,6 +621,1350 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/addToCartButton6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage7"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/forgetmenot" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ForgetMeNot"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$5.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton7"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage8"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/orchid" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Orchid"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$6.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton8"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage9"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/magnolia" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Magnolia"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$5.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton9"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage10"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bluebell" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bluebell"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$6.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton10"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage11"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/amaryllis" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Amaryllis"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$8.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton11"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage12"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/camellias" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Camellia"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$4.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton12"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage13"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/dahlia" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dahlia"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$6.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton13"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage14"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/zinnia" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Zinnia"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$7.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton14"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage15"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/aster" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Aster"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$7.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton15"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage16"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/gladiolus" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Gladiolus"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$2.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton16"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem17"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage17"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/marigold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Marigold"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$4.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton17"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage18"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/freesia" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Freesia"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$3.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton18"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem19"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage19"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/phlox" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Phlox"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$4.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton19"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to Cart"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flowerItem20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/flowerImage20"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/poppy" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Name and Price Column -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/flowerName20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Poppy"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/flowerPrice20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$3.99"
+                                android:textColor="#777"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <!-- Info Button -->
+                        <ImageButton
+                            android:id="@+id/infoButton20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/info"
+                            android:background="@android:color/transparent"/>
+
+
+                    </LinearLayout>
+
+                    <!-- Quantity Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/minusButton20"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:text="−" />
+
+                        <Button
+                            android:id="@+id/plusButton20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+" />
+                    </LinearLayout>
+
+                    <!-- Add to Cart Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addToCartButton20"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Add to Cart"

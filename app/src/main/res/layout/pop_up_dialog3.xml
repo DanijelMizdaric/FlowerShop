@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Tulip"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/RoseTextID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
@@ -44,9 +45,9 @@
 
     <TextView
         android:id="@+id/RoseTextID"
-        android:layout_width="396dp"
-        android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur dictum mi, et interdum elit consectetur id. Quisque eget mattis dolor, at luctus velit. Cras et sem gravida nisl sagittis vehicula. Aenean aliquet, purus vulputate elementum mattis, elit erat maximus erat, convallis rutrum nulla justo id enim. Etiam congue consequat rutrum. Sed vel laoreet est, non pharetra tellus. Aliquam placerat, erat nec ullamcorper placerat, augue enim sagittis diam, eu tincidunt est tellus quis elit. Nam at dapibus velit. Sed erat sem, tempus ac feugiat id, porta sed lorem. Nulla dolor lectus, volutpat vitae commodo consequat, sollicitudin ut libero. Ut sagittis pellentesque viverra. Nulla pellentesque egestas mauris, ut placerat turpis hendrerit nec. Sed ut dolor nibh.  Suspendisse potenti. Maecenas sed tempor est. Phasellus iaculis commodo eros, in lacinia nisi placerat vitae. Quisque id libero velit. Proin ut quam ornare, dapibus libero ac, ultrices turpis. Maecenas consectetur laoreet dui a consectetur. Vivamus a urna lacinia, scelerisque orci sit amet, ornare leo. Maecenas sodales diam quam, in congue risus consequat eget."
+        android:layout_width="373dp"
+        android:layout_height="290dp"
+        android:text="Tulips are bulbous perennial plants of the genus Tulipa in the family Liliaceae, encompassing around 75 wild species and over 3,000 cultivated varieties. They are known for their bright, cup-shaped flowers that bloom in the spring and come in nearly every color except true blue. Native primarily to Central Asia, tulips were later cultivated extensively in the Ottoman Empire and became widely naturalized in parts of Europe and the Middle East. The leaves are typically waxy, gray-green, and lanceolate, ranging from 10 to 30 cm in length, and grow alternately along the stem.  Each tulip flower usually has six tepals—three petals and three sepals that are nearly identical in shape and color. The flowers are borne singly on a leafless stem that ranges from 10 to 70 cm tall, depending on the species or cultivar. Tulips have a short blooming period, typically lasting 1–2 weeks, and are widely grown for ornamental use and as cut flowers, symbolizing love, rebirth, and elegance in many cultures."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"

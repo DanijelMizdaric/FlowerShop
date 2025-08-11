@@ -27,29 +27,33 @@ public class OrdersView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders_view);
 
-        // Initialize views
         recyclerView = findViewById(R.id.recyclerViewOrders);
         backBtn = findViewById(R.id.buttonBackID);
         emptyView = findViewById(R.id.emptyOrdersView);
 
-        // Setup RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
 
-        // Get database instance
         db = FlowerDB.getDatabase(getApplicationContext());
         String username = getIntent().getStringExtra("username");
         String caller = getIntent().getStringExtra("caller");
 
-        // Back button click handler
         backBtn.setOnClickListener(v -> {
             Intent intent;
-            if ("HomeScreen".equals(caller)) {
-                intent = new Intent(OrdersView.this, HomeScreen.class);
-            } else {
-                intent = new Intent(OrdersView.this, HomePage.class);
+            switch (caller){
+                case "HomeScreen":
+                    Log.d("DEBUG","Current caller: " + caller);
+                    intent = new Intent(OrdersView.this, HomeScreen.class);
+                    break;
+                case "BuyBouquetScreen":
+                    Log.d("DEBUG","Current caller: " + caller);
+                    intent = new Intent(OrdersView.this, BuyBouquetScreen.class);
+                    break;
+                default:
+                   intent = new Intent(OrdersView.this, HomePage.class);
+                   break;
             }
 
             intent.putExtra("username", username);
@@ -57,7 +61,6 @@ public class OrdersView extends AppCompatActivity {
             finish();
         });
 
-        // Load orders in background thread
         new Thread(() -> {
             try {
                 List<OrderRoom> orders = db.orderDao().getOrdersForUser(username);

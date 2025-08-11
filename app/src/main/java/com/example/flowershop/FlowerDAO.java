@@ -45,12 +45,21 @@ public interface FlowerDAO {
     @Query("SELECT * FROM Flowers WHERE flower_name = :flower_name")
     Flowers getFlowerByName(String flower_name);
 
-    @Query("SELECT price FROM Flowers WHERE flower_name = :flower_name")
-    double getFlowerPrice(String flower_name);
+    @Query("SELECT price FROM Flowers WHERE flower_name = :flower_name LIMIT 1")
+    Double getFlowerPrice(String flower_name);
 
     @Query("DELETE FROM flowers")
     void deleteAll();
 
     @Query("SELECT COUNT(*) FROM Flowers")
     int getFlowerCount();
+    @Query("SELECT * FROM Flowers")
+    List<Flowers> debugGetAll();
+
+    @Query("SELECT * FROM flower_cart WHERE username = :username")
+    List<FlowerRoom> getCartForUser(String username);
+
+    @Query("DELETE FROM flower_cart WHERE username = :username")
+    void deleteCartForUser(String username);
+
 }

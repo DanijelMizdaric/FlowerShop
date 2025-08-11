@@ -8,20 +8,19 @@ public class OrderRoom {
 
     @PrimaryKey(autoGenerate = true)
     public int id;
-    public int orderID;
-    public String name;
-    public int quantity;
+
+
     public String username;
-    public double price;
+
     public String date;
-    public OrderRoom(int orderID, String name, int quantity, double price, String username, String date) {
-        this.orderID = orderID;
-        this.name = name;
-        this.quantity = quantity;
+    public String address;
+    public int postalCode;
+    public int phoneNumber;
+    public OrderRoom(String username, String date, String address, int postalCode, int phoneNumber) {
         this.username = username;
-        this.price = price;
         this.date = date;
+        this.address = address;
+        this.postalCode = postalCode;
+        this.phoneNumber = phoneNumber;
     }
-
-
 }
