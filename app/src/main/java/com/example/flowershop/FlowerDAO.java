@@ -10,7 +10,7 @@ import java.util.List;
 @Dao
 public interface FlowerDAO {
 
-    // From DAO interface, flower_cart table methods:
+
     @Insert
     void insert(FlowerRoom flower);
 
@@ -24,7 +24,7 @@ public interface FlowerDAO {
     void delete(FlowerRoom flower);
 
     @Delete
-    void deleteFromCart(FlowerRoom flowerRoom);  // your existing method
+    void deleteFromCart(FlowerRoom flowerRoom);
 
     @Query("SELECT * FROM flower_cart")
     List<FlowerRoom> getAllFlowers();
@@ -35,7 +35,7 @@ public interface FlowerDAO {
     @Query("DELETE FROM flower_cart")
     void deleteAllFlowers();
 
-    // From FlowerDAO interface, Flowers table methods:
+
     @Insert
     void insert(Flowers flowers);
 

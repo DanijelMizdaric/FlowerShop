@@ -36,7 +36,7 @@ public class CheckOut extends AppCompatActivity {
     FlowerDB flowerDB;
     OrderDAO orderDao;
     private final Executor executor = Executors.newSingleThreadExecutor();
-    private String Username; // Moved to class level for consistent access
+    private String Username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -36,7 +36,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
         holder.orderDate.setText("Order Date: " + order.date);
 
-        // Build flowers list text
         StringBuilder flowersText = new StringBuilder();
         double total = 0;
         Log.d("OrderAdapter", "Order id: " + order.id + ", Flowers count: " + flowers.size());

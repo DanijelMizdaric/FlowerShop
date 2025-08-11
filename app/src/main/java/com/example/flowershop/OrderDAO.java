@@ -1,4 +1,4 @@
-// OrderDAO.java (updated to add an @Update method)
+
 package com.example.flowershop;
 
 import androidx.room.Dao;
@@ -16,7 +16,7 @@ public interface OrderDAO {
     long insertOrder(OrderRoom order);
 
     @Update
-    void update(OrderRoom order);  // added to allow updating the order totals
+    void update(OrderRoom order);
 
     @Query("SELECT * FROM orders WHERE username = :username")
     List<OrderRoom> getOrdersForUser(String username);
@@ -29,5 +29,4 @@ public interface OrderDAO {
     OrderRoom getLastOrder();
 
 
-    // (Other methods omitted for brevity)
 }

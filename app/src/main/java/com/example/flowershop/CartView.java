@@ -23,7 +23,7 @@ public class CartView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_view);
 
-        // Initialize with application context
+
         cartManager = new CartManager(getApplicationContext());
         username = getIntent().getStringExtra("username");
 
@@ -39,11 +39,11 @@ public class CartView extends AppCompatActivity {
             finish();
         });
 
-        // Observe the LiveData
+
         cartManager.getCartFlowers().observe(this, new Observer<List<FlowerRoom>>() {
             @Override
             public void onChanged(List<FlowerRoom> flowers) {
-                // This runs on UI thread automatically
+
                 if (flowers != null && !flowers.isEmpty()) {
                     CartAdapter adapter = new CartAdapter(CartView.this, flowers, cartManager);
                     cartListView.setAdapter(adapter);
@@ -53,7 +53,7 @@ public class CartView extends AppCompatActivity {
             }
         });
 
-        // Load cart for the user (handled in background thread by CartManager)
+
         cartManager.loadCartFlowers(username);
     }
 }
