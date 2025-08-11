@@ -52,7 +52,7 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         flowerDao= FlowerDB.getDatabase(this).flowerDao();
 
-        cartManager = new CartManager(this);
+        cartManager = new CartManager(getApplicationContext());
 
         backbtn = findViewById(R.id.backBtnID);
         cartBtn1 = findViewById(R.id.addToCartButton1);
@@ -170,31 +170,21 @@ public class HomeScreen extends AppCompatActivity {
         if (isDebug) {
             prefs.edit().putBoolean(PREFS_KEY_FLOWERS_INITIALIZED, false).apply();
         }
-
-
         boolean flowersInitDone = prefs.getBoolean(PREFS_KEY_FLOWERS_INITIALIZED, false);
-
         if (!flowersInitDone) {
             new Thread(() -> {
-                InitializeDatabase.populateDatabase(flowerDao); // Synchronous now
+                InitializeDatabase.populateDatabase(flowerDao);
 
-                // ✅ Debug: Verify what's in DB
                 List<Flowers> rows = flowerDao.debugGetAll();
                 for (Flowers f : rows) {
                     android.util.Log.d("InitDB", "Row: " + f.flower + " $" + f.price);
                 }
-
-                // ✅ Also print total count
                 int count = flowerDao.getFlowerCount();
                 android.util.Log.d("InitDB", "Flowers inserted: " + count);
 
-                // ✅ Mark init done
                 prefs.edit().putBoolean(PREFS_KEY_FLOWERS_INITIALIZED, true).apply();
             }).start();
         }
-
-
-
 
         backbtn.setOnClickListener(v -> {
             Intent intent = new Intent(HomeScreen.this, ShopType.class);
@@ -219,9 +209,6 @@ public class HomeScreen extends AppCompatActivity {
                         cardView.setCardBackgroundColor(getResources().getColor(R.color.primary_container));
                     }, 2000);
                 });
-
-
-
 
             } else {
                 Toast.makeText(this, "Flower not found", Toast.LENGTH_SHORT).show();
@@ -444,8 +431,6 @@ public class HomeScreen extends AppCompatActivity {
             Toast.makeText(this, "Quantity: " + quantities[19], Toast.LENGTH_SHORT).show();
         });
 
-
-        // Add "Rose" to cart when cartBtn1 is clicked
         cartBtn1.setOnClickListener(v -> {
             new Thread(() -> {
                 double price = flowerDao.getFlowerPrice("Rose");
@@ -460,7 +445,6 @@ public class HomeScreen extends AppCompatActivity {
             }).start();
         });
 
-        // Add "Lily" to cart when cartBtn2 is clicked
         cartBtn2.setOnClickListener(v -> {
             new Thread(() -> {
                 double price = flowerDao.getFlowerPrice("Lily");
@@ -737,7 +721,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+           
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -751,7 +735,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+           
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -764,7 +748,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -778,7 +762,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -806,7 +790,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -820,7 +804,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -834,7 +818,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -848,7 +832,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -862,7 +846,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -876,7 +860,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -890,7 +874,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -904,7 +888,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -918,7 +902,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -932,7 +916,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -946,7 +930,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -960,7 +944,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -974,7 +958,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -988,7 +972,7 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -1002,12 +986,11 @@ public class HomeScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
 
-        // Navigate to CartView activity when goCart button is clicked
         goCart.setOnClickListener(v -> {
             Intent intent = new Intent(HomeScreen.this, CheckOut.class);
             intent.putExtra("username", Username);

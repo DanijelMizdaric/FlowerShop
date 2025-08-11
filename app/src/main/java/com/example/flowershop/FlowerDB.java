@@ -6,12 +6,10 @@ import androidx.room.Database;
 import androidx.room.Index;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-@Database(entities = {FlowerRoom.class, OrderRoom.class, User.class, Flowers.class, OrderFlower.class, FlowerFact.class}, version = 14)
+@Database(entities = {FlowerRoom.class, OrderRoom.class, User.class, Flowers.class, OrderFlower.class, FlowerFact.class}, version = 16)
 public abstract class FlowerDB extends RoomDatabase{
 
     private static FlowerDB instance;
-
-    public abstract DAO DAO();
     public abstract OrderDAO orderDao();
     public abstract UserDAO userDAO();
 

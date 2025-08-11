@@ -38,14 +38,12 @@ public class FunFactFlower extends AppCompatActivity {
 
                 prefs.edit().putBoolean("db_initialized", true).apply();
 
-                // Wait until facts are inserted before fetching
                 try {
-                    Thread.sleep(500); // Wait a short time for inserts to complete
+                    Thread.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
-                // Now fetch the daily fact
                 factManager.getDailyFact(fact -> runOnUiThread(() -> {
                     if (fact != null) {
                         textFact.setText(fact.factText);

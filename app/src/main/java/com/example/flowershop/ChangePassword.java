@@ -53,8 +53,6 @@ public class ChangePassword extends AppCompatActivity {
                     runOnUiThread(()->{
                         Toast.makeText(this,"Invalid username or email", Toast.LENGTH_SHORT).show();
                     });
-
-
                 } else {
                     user.password = inputPass;
                     userDAO.update(user);

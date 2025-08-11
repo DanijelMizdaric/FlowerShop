@@ -9,11 +9,8 @@ public class FlowerFact {
 
         @PrimaryKey(autoGenerate = true)
         public int id;
-
         @ColumnInfo(name = "fact_text")
         public String factText;
-
-
         public FlowerFact (String factText){
             this.factText=factText;
         }

@@ -13,9 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ShopType extends AppCompatActivity {
 
-    Button btn1, btn2, btn3, backbtn;
-
-
+    Button btn1, btn2, backbtn;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -24,11 +22,9 @@ public class ShopType extends AppCompatActivity {
         setContentView(R.layout.activity_shop_type);
         btn1= findViewById(R.id.singleFlowerID);
         btn2=findViewById(R.id.bouquetID);
-        btn3=findViewById(R.id.customBouquetID);
         backbtn=findViewById(R.id.backScreenID);
 
         String Username = getIntent().getStringExtra("username");
-
 
         backbtn.setOnClickListener(v->{
             Intent intent = new Intent(ShopType.this, HomePage.class);
@@ -45,12 +41,6 @@ public class ShopType extends AppCompatActivity {
         });
         btn2.setOnClickListener(v->{
             Intent intent = new Intent(ShopType.this, BuyBouquetScreen.class);
-            intent.putExtra("username", Username);
-            startActivity(intent);
-            finish();
-        });
-        btn3.setOnClickListener(v->{
-            Intent intent = new Intent(ShopType.this, MakeCustomBouquetScreen.class);
             intent.putExtra("username", Username);
             startActivity(intent);
             finish();

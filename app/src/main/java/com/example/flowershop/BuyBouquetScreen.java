@@ -21,9 +21,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class BuyBouquetScreen extends AppCompatActivity {
+    private static final String PREFS_KEY_FLOWERS_INITIALIZED = "flowers_initialized";
 
     Button backbtn;
     Button cartBtn1, cartBtn2, cartBtn3, cartBtn4, cartBtn5, cartBtn6, cartBtn7, cartBtn8,cartBtn9,cartBtn10,
@@ -50,7 +52,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
         setContentView(R.layout.activity_buy_bouquet_screen);
         flowerDao= FlowerDB.getDatabase(this).flowerDao();
 
-        cartManager = new CartManager(this);
+        cartManager = new CartManager(getApplicationContext());
 
         backbtn = findViewById(R.id.backBtnID);
         cartBtn1 = findViewById(R.id.addToCartButton1);
@@ -162,7 +164,27 @@ public class BuyBouquetScreen extends AppCompatActivity {
 
         String Username = getIntent().getStringExtra("username");
 
+        SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
 
+        boolean isDebug = (getApplicationInfo().flags & android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        if (isDebug) {
+            prefs.edit().putBoolean(PREFS_KEY_FLOWERS_INITIALIZED, false).apply();
+        }
+        boolean flowersInitDone = prefs.getBoolean(PREFS_KEY_FLOWERS_INITIALIZED, false);
+        if (!flowersInitDone) {
+            new Thread(() -> {
+                InitializeDatabase.populateDatabase(flowerDao);
+
+                List<Flowers> rows = flowerDao.debugGetAll();
+                for (Flowers f : rows) {
+                    android.util.Log.d("InitDB", "Row: " + f.flower + " $" + f.price);
+                }
+                int count = flowerDao.getFlowerCount();
+                android.util.Log.d("InitDB", "Flowers inserted: " + count);
+
+                prefs.edit().putBoolean(PREFS_KEY_FLOWERS_INITIALIZED, true).apply();
+            }).start();
+        }
 
         backbtn.setOnClickListener(v -> {
             Intent intent = new Intent(BuyBouquetScreen.this, ShopType.class);
@@ -187,14 +209,9 @@ public class BuyBouquetScreen extends AppCompatActivity {
                         cardView.setCardBackgroundColor(getResources().getColor(R.color.primary_container));
                     }, 2000);
                 });
-
-
-
-
             } else {
                 Toast.makeText(this, "Flower not found", Toast.LENGTH_SHORT).show();
             }
-
             return true;
         });
 
@@ -412,7 +429,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
             Toast.makeText(this, "Quantity: " + quantities[19], Toast.LENGTH_SHORT).show();
         });
 
-        // Add "Rose" to cart when cartBtn1 is clicked
         cartBtn1.setOnClickListener(v -> {
             new Thread(() -> {
                 double price = flowerDao.getFlowerPrice("Rose (Bouquet)");
@@ -427,7 +443,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
             }).start();
         });
 
-        // Add "Lily" to cart when cartBtn2 is clicked
         cartBtn2.setOnClickListener(v -> {
             new Thread(() -> {
                 double price = flowerDao.getFlowerPrice("Lily (Bouquet)");
@@ -703,7 +718,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -717,7 +731,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -730,7 +743,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -744,7 +756,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -758,7 +769,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -772,7 +782,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -786,7 +795,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -800,7 +808,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -814,7 +821,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -828,7 +834,6 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -842,7 +847,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -856,7 +861,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -870,7 +875,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -884,7 +889,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -898,7 +903,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -912,7 +917,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -926,7 +931,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -940,7 +945,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -954,7 +959,7 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
@@ -968,12 +973,11 @@ public class BuyBouquetScreen extends AppCompatActivity {
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
             }
-            // Handle back button click
+            
             ImageButton backButton = dialog.findViewById(R.id.backButton);
             backButton.setOnClickListener(v1 -> dialog.dismiss());
         });
 
-        // Navigate to CartView activity when goCart button is clicked
         goCart.setOnClickListener(v -> {
             Intent intent = new Intent(BuyBouquetScreen.this, CheckOut.class);
             intent.putExtra("username", Username);
@@ -989,5 +993,4 @@ public class BuyBouquetScreen extends AppCompatActivity {
 
         });
     }
-
 }

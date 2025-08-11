@@ -56,4 +56,10 @@ public interface FlowerDAO {
     @Query("SELECT * FROM Flowers")
     List<Flowers> debugGetAll();
 
+    @Query("SELECT * FROM flower_cart WHERE username = :username")
+    List<FlowerRoom> getCartForUser(String username);
+
+    @Query("DELETE FROM flower_cart WHERE username = :username")
+    void deleteCartForUser(String username);
+
 }

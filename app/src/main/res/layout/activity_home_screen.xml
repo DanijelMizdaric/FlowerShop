@@ -125,7 +125,7 @@
                                 android:id="@+id/flowerPrice1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$12.99"
+                                android:text="$6.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -223,7 +223,7 @@
                         android:id="@+id/flowerPrice2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$9.99"
+                        android:text="$4.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -315,7 +315,7 @@
                         android:id="@+id/flowerPrice3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$14.99"
+                        android:text="$7.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -406,7 +406,7 @@
                         android:id="@+id/flowerPrice4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$7.99"
+                        android:text="$3.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -496,7 +496,7 @@
                         android:id="@+id/flowerPrice5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$11.99"
+                        android:text="$5.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -586,7 +586,7 @@
                         android:id="@+id/flowerPrice6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$15.99"
+                        android:text="$5.99"
                         android:textColor="#777"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -670,14 +670,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="ForgetMeNot"
-                                android:textSize="18sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/flowerPrice7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$9.99"
+                                android:text="$5.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -773,7 +773,7 @@
                                 android:id="@+id/flowerPrice8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$13.99"
+                                android:text="$6.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -869,7 +869,7 @@
                                 android:id="@+id/flowerPrice9"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$10.99"
+                                android:text="$5.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -965,7 +965,7 @@
                                 android:id="@+id/flowerPrice10"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$11.99"
+                                android:text="$6.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1061,7 +1061,7 @@
                                 android:id="@+id/flowerPrice11"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$15.99"
+                                android:text="$8.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1157,7 +1157,7 @@
                                 android:id="@+id/flowerPrice12"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$9.99"
+                                android:text="$4.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1253,7 +1253,7 @@
                                 android:id="@+id/flowerPrice13"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$15.99"
+                                android:text="$6.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1349,7 +1349,7 @@
                                 android:id="@+id/flowerPrice14"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$14.99"
+                                android:text="$7.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1445,7 +1445,7 @@
                                 android:id="@+id/flowerPrice15"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$14.99"
+                                android:text="$7.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1541,7 +1541,7 @@
                                 android:id="@+id/flowerPrice16"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$6.99"
+                                android:text="$2.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1637,7 +1637,7 @@
                                 android:id="@+id/flowerPrice17"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$9.99"
+                                android:text="$4.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1733,7 +1733,7 @@
                                 android:id="@+id/flowerPrice18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$7.99"
+                                android:text="$3.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1829,7 +1829,7 @@
                                 android:id="@+id/flowerPrice19"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$11.99"
+                                android:text="$4.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -1925,7 +1925,7 @@
                                 android:id="@+id/flowerPrice20"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="$7.99"
+                                android:text="$3.99"
                                 android:textColor="#777"
                                 android:textSize="16sp" />
                         </LinearLayout>

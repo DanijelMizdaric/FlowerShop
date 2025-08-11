@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="What kind of flower would you like?"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/singleFlowerID"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,26 +58,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topAppBar"
-        app:layout_constraintVertical_bias="0.896" />
+        app:layout_constraintVertical_bias="0.878" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bouquetID"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="363dp"
         android:layout_height="83dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="264dp"
         android:text="Buy a Bouquet"
-        app:layout_constraintBottom_toTopOf="@+id/customBouquetID"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/customBouquetID"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="363dp"
-        android:layout_height="83dp"
-        android:layout_marginBottom="224dp"
-        android:text="Make a custom Bouquet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

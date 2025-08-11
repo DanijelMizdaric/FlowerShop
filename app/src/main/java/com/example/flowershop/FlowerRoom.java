@@ -16,9 +16,9 @@ public class FlowerRoom {
     private int orderID;
 @Ignore
     public FlowerRoom(String name, int quantity, String username, double price) {
-        this(name, quantity, username, price, 0); // Default orderId=0
+        this(name, quantity, username, price, 0);
     }
-    // Constructor
+
     public FlowerRoom(String name, int quantity, String username, double price, int orderID) {
         this.name = name;
         this.quantity = quantity;
@@ -26,24 +26,18 @@ public class FlowerRoom {
         this.price = price;
         this.orderID = orderID;
     }
-
-
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public int getQuantity() {
         return quantity;
     }

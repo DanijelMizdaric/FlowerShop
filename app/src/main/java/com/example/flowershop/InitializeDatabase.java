@@ -6,51 +6,51 @@ import java.util.List;
 public class InitializeDatabase {
     public static void populateDatabase(FlowerDAO flowerDao) {
         List<Flowers> all = Arrays.asList(
-                new Flowers("Rose", 12.99),
-                new Flowers("Lily", 9.99),
-                new Flowers("Tulip", 14.99),
-                new Flowers("Daisy", 7.99),
-                new Flowers("Iris", 11.99),
-                new Flowers("Peony", 15.99),
-                new Flowers("Forget me not",9.99),
-                new Flowers("Orchid",13.99),
-                new Flowers("Magnolia",10.99),
-                new Flowers("Bluebell",11.99),
-                new Flowers("Amaryllis",15.99),
-                new Flowers("Camellia",9.99),
-                new Flowers("Dahlia",15.99),
-                new Flowers("Zinnia",14.99),
-                new Flowers("Aster",14.99),
-                new Flowers("Gladiolus",6.99),
-                new Flowers("Marigold",9.99),
-                new Flowers("Freesia",7.99),
-                new Flowers("Phlox",11.99),
-                new Flowers("Poppy",7.99),
+                new Flowers("Rose", 6.99),
+                new Flowers("Lily", 4.99),
+                new Flowers("Tulip", 7.99),
+                new Flowers("Daisy", 3.99),
+                new Flowers("Iris", 5.99),
+                new Flowers("Peony", 5.99),
+                new Flowers("Forget me not",5.99),
+                new Flowers("Orchid",6.99),
+                new Flowers("Magnolia",5.99),
+                new Flowers("Bluebell",6.99),
+                new Flowers("Amaryllis",8.99),
+                new Flowers("Camellia",4.99),
+                new Flowers("Dahlia",6.99),
+                new Flowers("Zinnia",7.99),
+                new Flowers("Aster",7.99),
+                new Flowers("Gladiolus",2.99),
+                new Flowers("Marigold",4.99),
+                new Flowers("Freesia",3.99),
+                new Flowers("Phlox",4.99),
+                new Flowers("Poppy",3.99),
 
-                new Flowers("Rose (Bouquet)", 32.99),
-                new Flowers("Lily (Bouquet)", 29.99),
-                new Flowers("Tulip (Bouquet)", 44.99),
-                new Flowers("Daisy (Bouquet)", 34.99),
-                new Flowers("Iris (Bouquet)", 42.99),
-                new Flowers("Peony (Bouquet)", 39.99),
-                new Flowers("Forget me not (Bouquet)",29.99),
-                new Flowers("Orchid (Bouquet)",35.99),
-                new Flowers("Magnolia (Bouquet)",35.99),
-                new Flowers("Bluebell (Bouquet)",40.99),
-                new Flowers("Amaryllis (Bouquet)",32.99),
-                new Flowers("Camellia (Bouquet)",42.99),
-                new Flowers("Dahlia (Bouquet)",40.99),
-                new Flowers("Zinnia (Bouquet)",38.99),
-                new Flowers("Aster (Bouquet)",38.99),
-                new Flowers("Gladiolus (Bouquet)",29.99),
-                new Flowers("Marigold (Bouquet)",35.99),
-                new Flowers("Freesia (Bouquet)",32.99),
-                new Flowers("Phlox (Bouquet)",42.99),
-                new Flowers("Poppy (Bouquet)",32.99)
+                new Flowers("Rose (Bouquet)", 12.99),
+                new Flowers("Lily (Bouquet)", 10.99),
+                new Flowers("Tulip (Bouquet)", 15.99),
+                new Flowers("Daisy (Bouquet)", 10.99),
+                new Flowers("Iris (Bouquet)", 11.99),
+                new Flowers("Peony (Bouquet)", 11.99),
+                new Flowers("Forget me not (Bouquet)",11.99),
+                new Flowers("Orchid (Bouquet)",12.99),
+                new Flowers("Magnolia (Bouquet)",11.99),
+                new Flowers("Bluebell (Bouquet)",12.99),
+                new Flowers("Amaryllis (Bouquet)",18.99),
+                new Flowers("Camellia (Bouquet)",10.99),
+                new Flowers("Dahlia (Bouquet)",12.99),
+                new Flowers("Zinnia (Bouquet)",15.99),
+                new Flowers("Aster (Bouquet)",15.99),
+                new Flowers("Gladiolus (Bouquet)",9.99),
+                new Flowers("Marigold (Bouquet)",10.99),
+                new Flowers("Freesia (Bouquet)",10.99),
+                new Flowers("Phlox (Bouquet)",10.99),
+                new Flowers("Poppy (Bouquet)",10.99)
         );
 
         try {
-            flowerDao.deleteAll(); // clear once
+            flowerDao.deleteAll();
             for (Flowers f : all) {
                 flowerDao.insert(f);
             }
@@ -66,11 +66,21 @@ public class InitializeDatabase {
                 new FlowerFact("Tulip bulbs can be substituted for onions in a recipe."),
                 new FlowerFact("The juice from bluebell flowers was used historically to make glue."),
                 new FlowerFact("Dandelions might seem like weeds, but they are a good source of vitamins A and C, iron, calcium and potassium."),
-                new FlowerFact("Moon flowers bloom only at night, closing during the day.")
+                new FlowerFact("Moon flowers bloom only at night, closing during the day."),
+                new FlowerFact("During the Middle Ages, lady’s mantle was thought to have magic healing properties."),
+                new FlowerFact("Ancient civilizations burned aster leaves to ward off evil spirits."),
+                new FlowerFact("Broccoli is actually a flower."),
+                new FlowerFact("Surprisingly, some plants are actually used to make pesticides."),
+                new FlowerFact("Sunflowers absorb radioactive elements."),
+                new FlowerFact("Delphiniums are named after dolphins."),
+                new FlowerFact("Petunias used to be lanky with small flowers that were either white and purple."),
+                new FlowerFact("Marigolds were used to treat hiccups."),
+                new FlowerFact("Zinnias used to be considered hard on the eyes."),
+                new FlowerFact("Lilies are toxic to cats")
         );
 
         new Thread(() -> {
-            flowerFactDAO.deleteAll(); // Optional: clear old ones
+            flowerFactDAO.deleteAll();
             for (FlowerFact fact : defaultFacts) {
                 flowerFactDAO.insert(fact);
             }

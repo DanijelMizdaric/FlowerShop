@@ -17,14 +17,10 @@ public class OrderRoom {
     public int postalCode;
     public int phoneNumber;
     public OrderRoom(String username, String date, String address, int postalCode, int phoneNumber) {
-
         this.username = username;
         this.date = date;
         this.address = address;
         this.postalCode = postalCode;
         this.phoneNumber = phoneNumber;
-
     }
-
-
 }

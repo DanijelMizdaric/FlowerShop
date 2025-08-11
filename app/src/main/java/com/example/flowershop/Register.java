@@ -15,11 +15,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Register extends AppCompatActivity {
 
-
     Button backbtn;
     Button registerBtn;
     private UserDAO userDAO;
-
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -55,7 +53,6 @@ public class Register extends AppCompatActivity {
                         startActivity(new Intent(this, MainActivity.class));
                         finish();
                     });
-
                 } else {
                     runOnUiThread(() ->
                             Toast.makeText(this, "User already exists!", Toast.LENGTH_SHORT).show()

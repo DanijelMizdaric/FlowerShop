@@ -33,8 +33,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         OrderRoom order = orderWithFlowers.order;
         List<OrderFlower> flowers = orderWithFlowers.flowers;
         Log.d("OrderAdapter", "Order ID: " + order.id + " has " + (flowers != null ? flowers.size() : 0) + " flowers.");
-        // Set order date
-        holder.orderDate.setText("Order Date: " + order.date); // Change to your actual date field
+
+        holder.orderDate.setText("Order Date: " + order.date);
 
         // Build flowers list text
         StringBuilder flowersText = new StringBuilder();

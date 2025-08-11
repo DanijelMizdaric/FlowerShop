@@ -2,7 +2,6 @@ package com.example.flowershop;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -10,70 +9,51 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class CartView extends AppCompatActivity {
 
     private ListView cartListView;
     private Button backbtn;
-
-    private ArrayAdapter<String> adapter;
-    private List<FlowerRoom> flowerList = new ArrayList<>();
-    private List<String> displayList = new ArrayList<>();
-
     private CartManager cartManager;
-
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_view);
 
-        cartManager = new CartManager(this);
-        String Username = getIntent().getStringExtra("username");
+        // Initialize with application context
+        cartManager = new CartManager(getApplicationContext());
+        username = getIntent().getStringExtra("username");
+
         cartListView = findViewById(R.id.cartViewID);
         backbtn = findViewById(R.id.backBtn);
-        String username = getIntent().getStringExtra("username");
+
+        String caller = getIntent().getStringExtra("caller");
         backbtn.setOnClickListener(v -> {
             Intent intent = new Intent(CartView.this, CheckOut.class);
-            intent.putExtra("username", Username);
+            intent.putExtra("username", username);
+            intent.putExtra("caller", caller);
             startActivity(intent);
             finish();
         });
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, displayList);
-        cartListView.setAdapter(adapter);
-
-
+        // Observe the LiveData
         cartManager.getCartFlowers().observe(this, new Observer<List<FlowerRoom>>() {
             @Override
             public void onChanged(List<FlowerRoom> flowers) {
-                flowerList.clear();
-                displayList.clear();
-                flowerList.addAll(flowers);
-
-                for (FlowerRoom flower : flowers) {
-                    String itemDisplay = String.format("%s - $%.2f (Qty: %d)",
-                            flower.getName(),
-                            flower.getPrice(),
-                            flower.getQuantity());
-                    displayList.add(itemDisplay);
+                // This runs on UI thread automatically
+                if (flowers != null && !flowers.isEmpty()) {
+                    CartAdapter adapter = new CartAdapter(CartView.this, flowers, cartManager);
+                    cartListView.setAdapter(adapter);
+                } else {
+                    Toast.makeText(CartView.this, "Your cart is empty", Toast.LENGTH_SHORT).show();
                 }
-
-                adapter.notifyDataSetChanged();
             }
         });
 
-
-        cartManager.getCartFlowers().observe(this, flowers -> {
-            CartAdapter adapter = new CartAdapter(this, flowers, cartManager);
-            cartListView.setAdapter(adapter);
-        });
-        
-
+        // Load cart for the user (handled in background thread by CartManager)
+        cartManager.loadCartFlowers(username);
     }
 }

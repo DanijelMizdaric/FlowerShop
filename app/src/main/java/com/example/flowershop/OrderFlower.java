@@ -20,44 +20,36 @@ public class OrderFlower {
         @ColumnInfo(name = "price")
         private double price;
 
-
-        // Getters and setters for all fields
-
         public int getId() {
                 return id;
         }
         public void setId(int id) {
                 this.id = id;
         }
-
         public int getOrderID() {
                 return orderID;
         }
         public void setOrderID(int orderID) {
                 this.orderID = orderID;
         }
-
         public String getName() {
                 return name;
         }
         public void setName(String name) {
                 this.name = name;
         }
-
         public int getQuantity() {
                 return quantity;
         }
         public void setQuantity(int quantity) {
                 this.quantity = quantity;
         }
-
         public String getUsername() {
                 return username;
         }
         public void setUsername(String username) {
                 this.username = username;
         }
-
         public double getPrice() {
                 return price;
         }
